@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebApp
+namespace WebApp.home
 {
 
 
-    public partial class _Default
+    public partial class _default
     {
     }
 }

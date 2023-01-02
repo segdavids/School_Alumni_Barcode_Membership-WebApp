@@ -145,6 +145,51 @@ namespace WebApp.Models
             return returnvalue;
         }
 
+        public class FileUpload1
+        {
+
+            public string ErrorMessage { get; set; }
+            public decimal filesize { get; set; }
+            public List<string> filetypes { get; set; }
+            public string UploadUserFile(HttpPostedFile file)
+            {
+                try
+                {
+                    var supportedTypes = filetypes;
+                    var fileExt = System.IO.Path.GetExtension(file.FileName).Substring(0).ToLower();
+                    bool b = supportedTypes.Any(fileExt.Contains);
+                    switch (b)
+                    {
+                        case true:
+                            //ErrorMessage = "200";
+                            if (file.ContentLength > (filesize * 1024))
+                            {
+                                ErrorMessage = "File size not be more than " + filesize + "KB";
+                            }
+                            else
+                            {
+                                ErrorMessage = "200";
+
+                            }
+                            break;
+                        case false:
+                            ErrorMessage = "File Extension Is InValid - Only Upload jpg, png, jpeg,avi,mp4,mkv files";
+                            break;
+                        default:
+                            ErrorMessage = "File Extension not found";
+                            break;
+                    }
+
+
+                    return ErrorMessage;
+                }
+                catch (Exception ex)
+                {
+                    ErrorMessage = ex.ToString();
+                    return ErrorMessage;
+                }
+            }
+        }
 
     }
 }

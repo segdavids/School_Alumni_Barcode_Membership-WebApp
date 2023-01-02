@@ -114,12 +114,79 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="about.aspx" />
+    <Content Include="Admin\account\edit_profile.aspx" />
+    <Content Include="Admin\account\forgot_password.aspx" />
+    <Content Include="Admin\account\login.aspx" />
+    <Content Include="Admin\account\password.aspx" />
+    <Content Include="Admin\account\profile.aspx" />
+    <Content Include="Admin\add_blog.aspx" />
+    <Content Include="Admin\add_group.aspx" />
+    <Content Include="Admin\add_member.aspx" />
+    <Content Include="Admin\add_membertogrpup.aspx" />
+    <Content Include="Admin\add_product.aspx" />
+    <Content Include="Admin\blog.aspx" />
+    <Content Include="Admin\blog_details.aspx" />
+    <Content Include="Admin\edit_blog.aspx" />
+    <Content Include="Admin\edit_group.aspx" />
+    <Content Include="Admin\edit_member.aspx" />
+    <Content Include="Admin\edit_profile.aspx" />
+    <Content Include="Admin\gallery.aspx" />
+    <Content Include="Admin\all_groups.aspx" />
+    <Content Include="Admin\group_details.aspx" />
+    <Content Include="Admin\manage_country.aspx" />
+    <Content Include="Admin\manage_role.aspx" />
+    <Content Include="Admin\manage_shop_category.aspx" />
+    <Content Include="Admin\manage_state.aspx" />
+    <Content Include="Admin\manage_titles.aspx" />
+    <Content Include="Admin\members.aspx" />
+    <Content Include="Admin\member_profile.aspx" />
+    <Content Include="Admin\settings.aspx" />
+    <Content Include="Admin\shop.aspx" />
+    <Content Include="all_groups.aspx" />
+    <Content Include="assets\css\app.css" />
+    <Content Include="assets\js\app.js" />
+    <Content Include="blog.aspx" />
+    <Content Include="blog_details.aspx" />
+    <Content Include="contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
-    <Content Include="Default.aspx" />
+    <Content Include="default.aspx" />
+    <Content Include="donate.aspx" />
+    <Content Include="group_details.aspx" />
+    <Content Include="dependencies\bootstrap-validator\js\bootstrap.min.css" />
+    <Content Include="dependencies\bootstrap-validator\js\validator.min.js" />
+    <Content Include="dependencies\bootstrap\css\bootstrap.min.css" />
+    <Content Include="dependencies\bootstrap\css\bootstrap.min.js" />
+    <Content Include="dependencies\bootstrap\js\bootstrap.min.js" />
+    <Content Include="dependencies\elevate-zoom\jquery.elevatezoom.js" />
+    <Content Include="dependencies\icofont\icofont.min.css" />
+    <Content Include="dependencies\imagesloaded\js\bootstrap.min.css" />
+    <Content Include="dependencies\imagesloaded\js\imagesloaded.pkgd.min.js" />
+    <Content Include="dependencies\isotope-layout\js\bootstrap.min.css" />
+    <Content Include="dependencies\isotope-layout\js\isotope.pkgd.min.js" />
+    <Content Include="dependencies\jquery\js\bootstrap.min.css" />
+    <Content Include="dependencies\jquery\js\jquery.min.js" />
+    <Content Include="dependencies\magnific-popup\css\magnific-popup.css" />
+    <Content Include="dependencies\magnific-popup\js\bootstrap.min.css" />
+    <Content Include="dependencies\magnific-popup\js\jquery.magnific-popup.min.js" />
+    <Content Include="dependencies\mcustomscrollbar\jquery.mCustomScrollbar.concat.min.js" />
+    <Content Include="dependencies\mcustomscrollbar\jquery.mCustomScrollbar.min.css" />
+    <Content Include="dependencies\popper.js\js\popper.min.js" />
+    <Content Include="dependencies\sal.js\js\bootstrap.min.css" />
+    <Content Include="dependencies\sal.js\sal.css" />
+    <Content Include="dependencies\sal.js\sal.js" />
+    <Content Include="dependencies\select2\css\select2.min.css" />
+    <Content Include="dependencies\select2\js\bootstrap.min.css" />
+    <Content Include="dependencies\select2\js\select2.min.js" />
+    <Content Include="dependencies\slick-carousel\css\ajax-loader.gif" />
+    <Content Include="dependencies\slick-carousel\css\slick-theme.css" />
+    <Content Include="dependencies\slick-carousel\css\slick.css" />
+    <Content Include="dependencies\slick-carousel\js\bootstrap.min.css" />
+    <Content Include="dependencies\slick-carousel\js\slick.min.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -131,9 +198,167 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
-    <Content Include="home\dmgs.Master" />
+    <Content Include="dmgs.Master" />
+    <Content Include="dependencies\icofont\fonts\icofont.woff" />
+    <Content Include="dependencies\icofont\fonts\icofont.woff2" />
+    <Content Include="loggedin.Master" />
+    <Content Include="Admin\account\admin.Master" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
-    <Content Include="home\summary.aspx" />
+    <Content Include="media\defaultimage.png" />
+    <Content Include="media\figure\author_1.jpg" />
+    <Content Include="media\figure\author_2.jpg" />
+    <Content Include="media\figure\author_3.jpg" />
+    <Content Include="media\figure\author_4.jpg" />
+    <Content Include="media\figure\cover_1.jpg" />
+    <Content Include="media\figure\old.jpg" />
+    <Content Include="media\figure\product_7.png" />
+    <Content Include="media\figure\product_breadcrum.jpeg" />
+    <Content Include="media\figure\shape_22.png" />
+    <Content Include="media\figure\user_photo1.jpg" />
+    <Content Include="media\figure\widget_gallery1.jpg" />
+    <Content Include="media\flat-user-icon-11.png" />
+    <Content Include="media\groups\about_2.png" />
+    <Content Include="media\groups\groups_1.jpg" />
+    <Content Include="media\groups\groups_10.jpg" />
+    <Content Include="media\groups\groups_11.jpg" />
+    <Content Include="media\groups\groups_2.jpg" />
+    <Content Include="media\groups\groups_3.jpg" />
+    <Content Include="media\groups\groups_4.jpg" />
+    <Content Include="media\groups\groups_5.jpg" />
+    <Content Include="media\groups\groups_6.jpg" />
+    <Content Include="media\groups\groups_7.jpg" />
+    <Content Include="media\groups\groups_8.jpg" />
+    <Content Include="media\groups\groups_9.jpg" />
+    <Content Include="media\groups\user_group1.jpg" />
+    <Content Include="media\logo.jpg" />
+    <Content Include="media\logo32.jpg" />
+    <Content Include="media\userimages\flat-user-icon-11.png" />
+    <Content Include="members.aspx" />
+    <Content Include="newsfeed.aspx" />
+    <Content Include="shop.aspx" />
+    <Content Include="summary.aspx" />
+    <Content Include="media\about\about_1.png" />
+    <Content Include="media\about\about_1_old.png" />
+    <Content Include="media\about\about_2.png" />
+    <Content Include="media\about\about_2_old.png" />
+    <Content Include="media\banner\apps.png" />
+    <Content Include="media\banner\banner_user.jpg" />
+    <Content Include="media\banner\hero_1.jpg" />
+    <Content Include="media\banner\hero_1old.jpg" />
+    <Content Include="media\banner\hero_1older.jpg" />
+    <Content Include="media\banner\map_line.png" />
+    <Content Include="media\banner\marker_1.png" />
+    <Content Include="media\banner\marker_2.png" />
+    <Content Include="media\banner\marker_3.png" />
+    <Content Include="media\banner\marker_4.png" />
+    <Content Include="media\banner\marker_5.png" />
+    <Content Include="media\banner\people_1.jpeg" />
+    <Content Include="media\banner\people_1.png" />
+    <Content Include="media\banner\people_1_old.png" />
+    <Content Include="media\banner\round_shape1.png" />
+    <Content Include="media\banner\shape_1.png" />
+    <Content Include="media\banner\shape_2.png" />
+    <Content Include="media\banner\shape_3.png" />
+    <Content Include="media\banner\shape_4.png" />
+    <Content Include="media\banner\shape_5.png" />
+    <Content Include="media\banner\shape_6.png" />
+    <Content Include="media\banner\user_1.jpg" />
+    <Content Include="media\banner\WhatsApp Image 2022-12-13 at 18.58.41%281%29.jpeg" />
+    <Content Include="media\blog\blog_1.jpg" />
+    <Content Include="media\blog\blog_2.jpg" />
+    <Content Include="media\blog\blog_3.jpg" />
+    <Content Include="media\blog\blog_4.jpg" />
+    <Content Include="media\favicon.png" />
+    <Content Include="media\figure\cart_1.jpg" />
+    <Content Include="media\figure\cart_2.jpg" />
+    <Content Include="media\figure\cart_3.jpg" />
+    <Content Include="media\figure\chat_1.jpg" />
+    <Content Include="media\figure\chat_10.jpg" />
+    <Content Include="media\figure\chat_11.jpg" />
+    <Content Include="media\figure\chat_12.jpg" />
+    <Content Include="media\figure\chat_2.jpg" />
+    <Content Include="media\figure\chat_3.jpg" />
+    <Content Include="media\figure\chat_4.jpg" />
+    <Content Include="media\figure\chat_5.jpg" />
+    <Content Include="media\figure\chat_6.jpg" />
+    <Content Include="media\figure\chat_7.jpg" />
+    <Content Include="media\figure\chat_8.jpg" />
+    <Content Include="media\figure\chat_9.jpg" />
+    <Content Include="media\figure\chat_round_shape.png" />
+    <Content Include="media\figure\chat_round_shape2.png" />
+    <Content Include="media\figure\chat_round_shape3.png" />
+    <Content Include="media\figure\chat_round_shape4.png" />
+    <Content Include="media\figure\cloud_1.png" />
+    <Content Include="media\figure\cloud_2.png" />
+    <Content Include="media\figure\footer_shape.png" />
+    <Content Include="media\figure\man_1.png" />
+    <Content Include="media\figure\man_2.png" />
+    <Content Include="media\figure\man_3.png" />
+    <Content Include="media\figure\man_4.png" />
+    <Content Include="media\figure\man_5.png" />
+    <Content Include="media\figure\man_6.png" />
+    <Content Include="media\figure\man_7.png" />
+    <Content Include="media\figure\man_8.png" />
+    <Content Include="media\figure\man_9.png" />
+    <Content Include="media\figure\map_1.png" />
+    <Content Include="media\figure\multi_shape.png" />
+    <Content Include="media\figure\notifiy_1.png" />
+    <Content Include="media\figure\notifiy_2.png" />
+    <Content Include="media\figure\notifiy_3.png" />
+    <Content Include="media\figure\shape_1.png" />
+    <Content Include="media\figure\shape_10.png" />
+    <Content Include="media\figure\shape_11.png" />
+    <Content Include="media\figure\shape_1_002.png" />
+    <Content Include="media\figure\shape_1_003.png" />
+    <Content Include="media\figure\shape_2.png" />
+    <Content Include="media\figure\shape_2_002.png" />
+    <Content Include="media\figure\shape_3.png" />
+    <Content Include="media\figure\shape_3_002.png" />
+    <Content Include="media\figure\shape_4.png" />
+    <Content Include="media\figure\shape_4_002.png" />
+    <Content Include="media\figure\shape_5.png" />
+    <Content Include="media\figure\shape_6.png" />
+    <Content Include="media\figure\shape_6old.png" />
+    <Content Include="media\figure\shape_7.png" />
+    <Content Include="media\figure\shape_8.png" />
+    <Content Include="media\figure\shape_9.png" />
+    <Content Include="media\figure\square_shape.png" />
+    <Content Include="media\figure\Untitled.jpeg" />
+    <Content Include="media\figure\why_choose_1.jpg" />
+    <Content Include="media\figure\widget_banner_1.png" />
+    <Content Include="media\hero_1.jpg" />
+    <Content Include="media\location\location_1.jpg" />
+    <Content Include="media\location\location_2.jpg" />
+    <Content Include="media\location\location_3.jpg" />
+    <Content Include="media\location\location_4.jpg" />
+    <Content Include="media\logo.png" />
+    <Content Include="media\logo_dark.png" />
+    <Content Include="media\mobile_logo.png" />
+    <Content Include="media\people_1.png" />
+    <Content Include="media\preloader-jpg-6397bba9400b9.jpg" />
+    <Content Include="media\preloader.jpg" />
+    <Content Include="media\preloader.png" />
+    <Content Include="media\preloader0.png" />
+    <Content Include="media\preloader1.png" />
+    <Content Include="media\team\shape_1.png" />
+    <Content Include="media\team\shape_2.png" />
+    <Content Include="media\team\shape_3.png" />
+    <Content Include="media\team\shape_4.png" />
+    <Content Include="media\team\shape_circle_1.png" />
+    <Content Include="media\team\shape_circle_2.png" />
+    <Content Include="media\team\shape_circle_3.png" />
+    <Content Include="media\team\team_1.jpg" />
+    <Content Include="media\team\team_3.jpg" />
+    <Content Include="media\team\team_4.jpg" />
+    <Content Include="media\team\team_5.jpg" />
+    <Content Include="media\team\team_6.jpg" />
+    <Content Include="media\team\team_7.jpg" />
+    <Content Include="media\testimonial\bg_1.jpg" />
+    <Content Include="media\testimonial\nav_1.jpg" />
+    <Content Include="media\testimonial\nav_2.jpg" />
+    <Content Include="media\testimonial\nav_3.jpg" />
+    <Content Include="media\testimonial\shape_1.png" />
+    <Content Include="media\testimonial\shape_2.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -169,30 +394,310 @@
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
+    <Compile Include="about.aspx.cs">
+      <DependentUpon>about.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
+    <Compile Include="about.aspx.designer.cs">
+      <DependentUpon>about.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\account\admin.Master.cs">
+      <DependentUpon>admin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\account\admin.Master.designer.cs">
+      <DependentUpon>admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\account\edit_profile.aspx.cs">
+      <DependentUpon>edit_profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\account\edit_profile.aspx.designer.cs">
+      <DependentUpon>edit_profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\account\forgot_password.aspx.cs">
+      <DependentUpon>forgot_password.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\account\forgot_password.aspx.designer.cs">
+      <DependentUpon>forgot_password.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\account\login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\account\login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\account\password.aspx.cs">
+      <DependentUpon>password.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\account\password.aspx.designer.cs">
+      <DependentUpon>password.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\account\profile.aspx.cs">
+      <DependentUpon>profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\account\profile.aspx.designer.cs">
+      <DependentUpon>profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\add_blog.aspx.cs">
+      <DependentUpon>add_blog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\add_blog.aspx.designer.cs">
+      <DependentUpon>add_blog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\add_group.aspx.cs">
+      <DependentUpon>add_group.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\add_group.aspx.designer.cs">
+      <DependentUpon>add_group.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\add_member.aspx.cs">
+      <DependentUpon>add_member.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\add_member.aspx.designer.cs">
+      <DependentUpon>add_member.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\add_membertogrpup.aspx.cs">
+      <DependentUpon>add_membertogrpup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\add_membertogrpup.aspx.designer.cs">
+      <DependentUpon>add_membertogrpup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\add_product.aspx.cs">
+      <DependentUpon>add_product.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\add_product.aspx.designer.cs">
+      <DependentUpon>add_product.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\blog.aspx.cs">
+      <DependentUpon>blog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\blog.aspx.designer.cs">
+      <DependentUpon>blog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\blog_details.aspx.cs">
+      <DependentUpon>blog_details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\blog_details.aspx.designer.cs">
+      <DependentUpon>blog_details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\edit_blog.aspx.cs">
+      <DependentUpon>edit_blog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\edit_blog.aspx.designer.cs">
+      <DependentUpon>edit_blog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\edit_group.aspx.cs">
+      <DependentUpon>edit_group.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\edit_group.aspx.designer.cs">
+      <DependentUpon>edit_group.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\edit_member.aspx.cs">
+      <DependentUpon>edit_member.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\edit_member.aspx.designer.cs">
+      <DependentUpon>edit_member.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\edit_profile.aspx.cs">
+      <DependentUpon>edit_profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\edit_profile.aspx.designer.cs">
+      <DependentUpon>edit_profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\gallery.aspx.cs">
+      <DependentUpon>gallery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\gallery.aspx.designer.cs">
+      <DependentUpon>gallery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\all_groups.aspx.cs">
+      <DependentUpon>all_groups.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\all_groups.aspx.designer.cs">
+      <DependentUpon>all_groups.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\group_details.aspx.cs">
+      <DependentUpon>group_details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\group_details.aspx.designer.cs">
+      <DependentUpon>group_details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\manage_country.aspx.cs">
+      <DependentUpon>manage_country.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\manage_country.aspx.designer.cs">
+      <DependentUpon>manage_country.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\manage_role.aspx.cs">
+      <DependentUpon>manage_role.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\manage_role.aspx.designer.cs">
+      <DependentUpon>manage_role.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\manage_shop_category.aspx.cs">
+      <DependentUpon>manage_shop_category.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\manage_shop_category.aspx.designer.cs">
+      <DependentUpon>manage_shop_category.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\manage_state.aspx.cs">
+      <DependentUpon>manage_state.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\manage_state.aspx.designer.cs">
+      <DependentUpon>manage_state.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\manage_titles.aspx.cs">
+      <DependentUpon>manage_titles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\manage_titles.aspx.designer.cs">
+      <DependentUpon>manage_titles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\members.aspx.cs">
+      <DependentUpon>members.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\members.aspx.designer.cs">
+      <DependentUpon>members.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\member_profile.aspx.cs">
+      <DependentUpon>member_profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\member_profile.aspx.designer.cs">
+      <DependentUpon>member_profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\settings.aspx.cs">
+      <DependentUpon>settings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\settings.aspx.designer.cs">
+      <DependentUpon>settings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\shop.aspx.cs">
+      <DependentUpon>shop.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\shop.aspx.designer.cs">
+      <DependentUpon>shop.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="all_groups.aspx.cs">
+      <DependentUpon>all_groups.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="all_groups.aspx.designer.cs">
+      <DependentUpon>all_groups.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="blog.aspx.cs">
+      <DependentUpon>blog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="blog.aspx.designer.cs">
+      <DependentUpon>blog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="blog_details.aspx.cs">
+      <DependentUpon>blog_details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="blog_details.aspx.designer.cs">
+      <DependentUpon>blog_details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="contact.aspx.cs">
+      <DependentUpon>contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="contact.aspx.designer.cs">
+      <DependentUpon>contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="donate.aspx.cs">
+      <DependentUpon>donate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="donate.aspx.designer.cs">
+      <DependentUpon>donate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="group_details.aspx.cs">
+      <DependentUpon>group_details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="group_details.aspx.designer.cs">
+      <DependentUpon>group_details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="loggedin.Master.cs">
+      <DependentUpon>loggedin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="loggedin.Master.designer.cs">
+      <DependentUpon>loggedin.Master</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="home\dmgs.Master.cs">
+    <Compile Include="dmgs.Master.cs">
       <DependentUpon>dmgs.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="home\dmgs.Master.designer.cs">
+    <Compile Include="dmgs.Master.designer.cs">
       <DependentUpon>dmgs.Master</DependentUpon>
     </Compile>
-    <Compile Include="home\summary.aspx.cs">
+    <Compile Include="members.aspx.cs">
+      <DependentUpon>members.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="members.aspx.designer.cs">
+      <DependentUpon>members.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="newsfeed.aspx.cs">
+      <DependentUpon>newsfeed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="newsfeed.aspx.designer.cs">
+      <DependentUpon>newsfeed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="shop.aspx.cs">
+      <DependentUpon>shop.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="shop.aspx.designer.cs">
+      <DependentUpon>shop.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="summary.aspx.cs">
       <DependentUpon>summary.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="home\summary.aspx.designer.cs">
+    <Compile Include="summary.aspx.designer.cs">
       <DependentUpon>summary.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\BLL.cs" />
@@ -220,13 +725,22 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Admin\" />
     <Folder Include="App_Data\" />
+    <Folder Include="dependencies\bootstrap-validator\css\" />
+    <Folder Include="dependencies\imagesloaded\css\" />
+    <Folder Include="dependencies\isotope-layout\css\" />
+    <Folder Include="dependencies\jquery\css\" />
+    <Folder Include="dependencies\popper.js\css\" />
+    <Folder Include="dependencies\sal.js\css\" />
+    <Folder Include="dependencies\select2\css - Copy\" />
+    <Folder Include="home\" />
+    <Folder Include="media\gallery\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+    <Content Include="Template\Upload_Template.csv" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

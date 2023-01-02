@@ -1,0 +1,318 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="admin.master.cs" Inherits="WebApp.Admin.account.admin" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<%--    <title>Cirkle | NewsFeed</title>--%>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="/media/favicon.png">
+    <link rel="stylesheet" href="/dependencies/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/dependencies/icofont/icofont.min.css">
+    <link rel="stylesheet" href="/dependencies/slick-carousel/css/slick.css">
+    <link rel="stylesheet" href="/dependencies/slick-carousel/css/slick-theme.css">
+    <link rel="stylesheet" href="/dependencies/magnific-popup/css/magnific-popup.css">
+    <link rel="stylesheet" href="/dependencies/sal.js/sal.css">
+    <link rel="stylesheet" href="/dependencies/mcustomscrollbar/jquery.mCustomScrollbar.min.css">
+    <link rel="stylesheet" href="/dependencies/select2/css/select2.min.css">
+
+    <!-- Site Stylesheet -->
+    <link rel="stylesheet" href="/assets/css/app.css">
+    <!-- Google Web Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet"> 
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body class="bg-link-water">
+    <form id="form1" runat="server">
+        <!--[if lte IE 9]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+    <![endif]-->
+    <a href="#wrapper" data-type="section-switch" class="scrollup">
+        <i class="icofont-bubble-up"></i>
+    </a>
+    <!-- Preloader Start Here -->
+    <div id="preloader"></div>
+    <!-- Preloader End Here -->
+          <div id="wrapper" class="wrapper">
+
+               <header class="fixed-header">
+            <div class="header-menu">
+                <div class="navbar">
+                    <div class="nav-item d-none d-sm-block">
+                        <div class="header-logo">
+                            <a href="/"><img src="/media/logo.png" alt="Cirkle"></a>
+                        </div>
+                    </div>
+                    <div class="nav-item nav-top-menu">
+                        <nav id="dropdown" class="template-main-menu">
+                            <ul class="menu-content">
+                                <li class="header-nav-item">
+                                    <a href="/admin/account/profile" class="menu-link active">Home</a>
+                                </li>
+                                 <li class="header-nav-item">
+                                        <a href="#" class="menu-link have-sub">Community</a>
+                                       <ul class="sub-menu">
+                                                    <li>
+                                                        <a href="newsfeed">NewsFeed</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="members">Members</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="all_groups">Groups</a>
+                                                    </li>
+                                                    
+                                                </ul>
+                                    </li>
+                                  <li class="header-nav-item">
+                                        <a href="blog" class="menu-link">Blog</a>
+                                    </li>
+                                     <li class="header-nav-item">
+                                        <a href="about" class="menu-link">About Us</a>
+                                    </li>
+                                    <li class="header-nav-item">
+                                        <ul class="sub-menu">
+                                            <li>
+                                                <a href="about">About</a>
+                                            </li>
+                                            <li>
+                                                <a href="contact">Contact Us</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                      <li class="header-nav-item">
+                                        <a href="shop" class="menu-link">Shop</a>
+                                    </li>
+                                 
+                                      <li class="header-nav-item">
+                                        <a href="donate" class="menu-link">Donate</a>
+                                    </li>
+                                    <li class="header-nav-item">
+                                        <a href="contact" class="menu-link">Contact Us</a>
+                                    </li>                          
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="nav-item header-control">
+                      
+                        <div class="inline-item d-flex align-items-center">                         
+                            <div class="dropdown dropdown-cart">
+                                <a href="#" class="dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+                                    <i class="icofont-facebook" style="color:#f7d35c"></i>
+                                </a>                           
+                            </div>
+                             <div class="dropdown dropdown-cart">
+                                <a href="#" class="dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+                                    <i class="icofont-twitter" style="color:#f7d35c"></i>
+                                </a>                           
+                            </div>
+                             <div class="dropdown dropdown-cart">
+                                <a href="#" class="dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+                                    <i class="icofont-instagram" style="color:#f7d35c"></i>
+                                </a>                           
+                            </div>
+                           
+                            <div class="inline-item">
+                            <div class="dropdown dropdown-admin">
+                                <button class="dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+                                    <span class="media">
+                                        <span class="item-img">
+                                            <img src="/media/defaultimage.png" alt="Chat">
+                                            <span class="acc-verified"><i class="icofont-check"></i></span>
+                                        </span>
+                                        <span class="media-body">
+                                            <span class="item-title">Admin</span>
+                                        </span>
+                                    </span>
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <ul class="admin-options">
+                                        <li><a href="#">Profile Settings</a></li>
+                                        <li><a href="/admin/settings">Settings</a></li>
+                                        <li><a href="#">Terms and Conditions</a></li>
+                                        <li><a href="/contact">Contact</a></li>
+                                        <li><a href="/admin/login">Log Out</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                
+                    </div>
+                </div>
+            </div>
+        </header>
+
+               <!-- Sidebar Left -->
+        <div class="fixed-sidebar">
+            <div class="fixed-sidebar-left small-sidebar">
+                <div class="sidebar-toggle" type="button">
+                    <button class="toggle-btn toggler-open" type="button">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+                <div class="sidebar-menu-wrap">
+                    <div class="mCustomScrollbar" data-mcs-theme="dark" data-mcs-axis="y">
+                        <ul class="side-menu">
+                            <li><a href="/admin/newsfeed" class="menu-link" style="color:brown" data-toggle="tooltip" data-placement="right" title=" NEWSFEED"><i class="icofont-newspaper"></i></a></li>
+                            <li><a href="/admin/members" class="menu-link" style="color:brown" data-toggle="tooltip" data-placement="right" title="MEMBERS"><i class="icofont-users-alt-4"></i></a></li>
+                            <li><a href="/admin/all_groups" class="menu-link" style="color:brown" data-toggle="tooltip" data-placement="right" title="GROUPS"><i class="icofont-users-alt-2"></i></a></li>
+                            <li><a href="/admin/gallery" class="menu-link" style="color:brown" data-toggle="tooltip" data-placement="right" title="GALLERY"><i class="icofont-photobucket"></i></a></li>
+                            <li><a href="/admin/schedule" class="menu-link" data-toggle="tooltip" style="color:brown" data-placement="right" title="EVENT SCHEDULE"><i class="icofont-calendar"></i></a></li>
+                            <li><a href="/admin/blog" class="menu-link" style="color:brown" data-toggle="tooltip" data-placement="right" title="BLOG"><i class="icofont-ui-text-chat"></i></a></li>
+                            <li><a href="/admin/shop" class="menu-link" data-toggle="tooltip" style="color:brown" data-placement="right" title="SHOP"><i class="icofont-shopping-cart"></i></a></li>
+                            <li><a href="/admin/settings" class="menu-link" data-toggle="tooltip" style="color:brown" data-placement="right" title="SETTINGS"><i class="icofont-settings"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="fixed-sidebar-left large-sidebar">
+                <div class="sidebar-toggle">
+                    <div class="sidebar-logo">
+                        <a href="/"><img src="/media/logo.png" alt="Logo"></a>
+                    </div>
+                    <button class="toggle-btn toggler-close">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+                <div class="sidebar-menu-wrap">
+                    <div class="mCustomScrollbar" data-mcs-theme="dark" data-mcs-axis="y">
+                        <ul class="side-menu">
+                            <li><a href="/admin/newsfeed" class="menu-link"><i class="icofont-newspaper"></i><span class="menu-title">Newsfeed</span></a></li>
+                            <li><a href="/admin/members" class="menu-link"><i class="icofont-users-alt-4"></i><span class="menu-title">Members Friends</span></a></li>
+                            <li><a href="/admin/all_groups" class="menu-link"><i class="icofont-users-alt-2"></i><span class="menu-title">Groups</span></a></li>
+                            <li><a href="/admin/gallery" class="menu-link"><i class="icofont-photobucket"></i><span class="menu-title">Gallery</span></a></li>
+                            <li><a href="/admin/schedule" class="menu-link"><i class="icofont-calendar"></i><span class="menu-title">Event Schedule</span></a></li>
+                            <li><a href="/admin/blog" class="menu-link"><i class="icofont-ui-text-chat"></i><span class="menu-title">Blog</span></a></li>
+                            <li><a href="/admin/shop" class="menu-link"><i class="icofont-shopping-cart"></i><span class="menu-title">Shop</span></a></li>
+                        </ul>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+
+              <!-- Sidebar Right -->
+        <div class="fixed-sidebar right">
+            <div class="fixed-sidebar-right small-sidebar">
+                <div class="sidebar-toggle" id="chat-head-toggle">
+                    <button class="chat-icon" type="button">
+                        <i class="icofont-users"style="color:#f7d35c"></i>
+                    </button>
+                </div>
+                <div class="sidebar-menu-wrap">
+                    <div class="mCustomScrollbar" data-mcs-theme="dark" data-mcs-axis="y">
+                        <ul class="user-chat-list">
+                            <li class="chat-item chat-open">
+                                <div class="author-img">
+                                    <img src="/media/figure/chat_1.jpg" alt="chat">
+                                    <span class="chat-status offline"></span>
+                                </div>
+                            </li>
+                        
+           
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+            <!--=====================================-->
+            <!--=        Footer Area Start       	=-->
+            <!--=====================================-->
+            <footer class="footer-wrap footer-dashboard">
+                <div class="main-footer">
+                    <div class="container">
+                        <div class="row row-cols-lg-4 row-cols-sm-2 row-cols-1">
+                            <div class="col">
+                                <div class="footer-box">
+                                    <div class="footer-logo">
+                                        <a href="index.html"><img src="/media/logo_dark.png" alt="Logo"></a>
+                                    </div>
+                                    <p>Dorem ipsum dolor sit amet consec adipisicing elit sed do eiusmod por incidiut labore et loreLorem ipsum kelly amieo dolorey.</p>
+                                </div>
+                            </div>
+                            <div class="col d-flex justify-content-lg-center">
+                                <div class="footer-box">
+                                    <h3 class="footer-title" style="color:brown">
+                                        Important Links
+                                    </h3>
+                                    <div class="footer-link">
+                                        <ul>
+                                            <li><a href="/">Home</a></li>
+                                            <li><a href="about">About us</a></li>
+                                            <li><a href="shop">Shop</a></li>
+                                            <li><a href="contact">Contacts</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col d-flex justify-content-lg-center">
+                                <div class="footer-box">
+                                    <h3 class="footer-title" style="color:brown">
+                                        Community
+                                    </h3>
+                                    <div class="footer-link">
+                                        <ul>
+                                            <li><a href="newsfeed">NewsFeed</a></li>
+                                            <li><a href="members">Members</a></li>
+                                            <li><a href="all_groups">Groups</a></li>
+                                            <li><a href="blog">Blog</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col d-flex justify-content-lg-center">
+                                <div class="footer-box">
+                                    <h3 class="footer-title" style="color:brown">
+                                        Social Media Accounts
+                                    </h3>
+                                    <div class="footer-link">
+                                        <ul>
+                                            <li><a href="https://www.facebook.com/">facebook</a></li>
+                                            <li><a href="https://twitter.com/">twitter</a></li>
+                                            <li><a href="https://www.instagram.com/">instagram</a></li>
+                                            <li><a href="https://www.youtube.com/">Youtube</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                <div class="footer-copyright">©DOBA2004 <%= DateTime.Now.Year%>. All Rights Reserved</div>
+                </div>
+            </footer>
+        </div>
+    </form>
+
+     <!-- Jquery Js -->
+    <script src="/dependencies/jquery/js/jquery.min.js"></script>
+    <script src="/dependencies/popper.js/js/popper.min.js"></script>
+    <script src="/dependencies/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/dependencies/imagesloaded/js/imagesloaded.pkgd.min.js"></script>
+    <script src="/dependencies/isotope-layout/js/isotope.pkgd.min.js"></script>
+    <script src="/dependencies/slick-carousel/js/slick.min.js"></script>
+    <script src="/dependencies/sal.js/sal.js"></script>
+    <script src="/dependencies/magnific-popup/js/jquery.magnific-popup.min.js"></script>
+    <script src="/dependencies/mcustomscrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="/dependencies/select2/js/select2.min.js"></script>
+    <script src="/dependencies/elevate-zoom/jquery.elevatezoom.js"></script>
+    <script src="/dependencies/bootstrap-validator/js/validator.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBtmXSwv4YmAKtcZyyad9W7D4AC08z0Rb4"></script>
+
+    <!-- Site Scripts -->
+    <script src="/assets/js/app.js"></script>
+</body>
+</html>
