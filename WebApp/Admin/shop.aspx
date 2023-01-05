@@ -57,7 +57,7 @@
                                     <div class="item-category">
                                         <a href="#">Merch</a>
                                     </div>
-                                    <h3 class="product-title"><a href="single-shop.html">DMGS SweatShirt</a></h3>
+                                    <h3 class="product-title"><a href="product_details?=">DMGS SweatShirt</a></h3>
                                     <div class="product-price" style="color:brown">N10,000.00</div>
                                 </div>
                             </div>

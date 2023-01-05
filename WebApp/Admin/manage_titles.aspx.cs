@@ -60,9 +60,35 @@ namespace WebApp.Admin
                     break;
             }
         }
-        protected void Delete(object sender, EventArgs e)
+        protected void add_member(object sender, EventArgs e)
         {
-            
+            try
+            {
+                string RankName = ranknametxt.Value;
+
+                string query = $"IF EXISTS (select * from Titles where TitleName='{RankName}') BEGIN update Titles set TitleName='{RankName}' where TitleName='{RankName}' END ELSE BEGIN insert into Titles values('{RankName}') END";
+                string StatusCode = BLL.NonQeryRequest(query);
+                switch (StatusCode)
+                {
+                    case "200":
+                        gettitle();
+                        exceptiondiv.Visible = true;
+                        exceptiondiv.Attributes.Add("class", "alert alert-success");
+                        exceptiontxt.InnerHtml = "Title added successfully";
+                        break;
+                    default:
+                        gettitle();
+                        exceptiondiv.Visible = true;
+                        exceptiontxt.InnerHtml = StatusCode.ToString();
+                        break;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                exceptiondiv.Visible = true;
+                exceptiontxt.InnerHtml = ex.ToString();
+            }
         }
         protected void Edit(object sender, EventArgs e)
         {
@@ -75,5 +101,6 @@ namespace WebApp.Admin
 
         }
 
+    
     }
 }

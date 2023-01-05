@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/account/admin.Master" MaintainScrollPositionOnPostback="true" AutoEventWireup="true" CodeBehind="gallery.aspx.cs" Inherits="WebApp.Admin.gallery" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <title>DOBA2004 | User Gallery</title>
+    <title>DOBA2004 | Admin Gallery</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
       <!-- Page Content -->

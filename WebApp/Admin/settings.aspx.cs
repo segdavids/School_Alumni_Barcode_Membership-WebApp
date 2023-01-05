@@ -18,8 +18,8 @@ namespace WebApp.Admin
         public List<string> profileurllist = new List<string>();
         protected void Page_Load(object sender, EventArgs e)
         {
-           // SessionCheck();
-           // getquerystring();
+            SessionCheck();
+            getquerystring();
             if (!IsPostBack)
             {
                 getuser();
@@ -31,13 +31,13 @@ namespace WebApp.Admin
         public void SessionCheck()
         {
 
-            if (Session["Email"] == null || Session["AdminId"] == null)
+            if (Session["Email"] == null || Session["UserId"] == null)
             {
                 Response.Redirect("~/admin/account/login?url=" + Server.UrlEncode(Request.Url.AbsoluteUri));
             }
 
         }
-        public void getquerystring() => mid = Convert.ToInt32(Session["AdminId"].ToString());
+        public void getquerystring() => mid = Convert.ToInt32(Session["UserId"].ToString());
 
         public void getuser()
         {

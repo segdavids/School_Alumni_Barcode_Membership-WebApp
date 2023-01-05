@@ -11123,14 +11123,14 @@ nav.template-main-menu > ul > li:hover ul.mega-menu {
 }
 
 .widget-memebers .nav-tabs .nav-link:hover {
-    border-color: #5edfff;
-    background-color: #5edfff;
+    border-color: brown;
+    background-color: #f7d35c;
     color: #ffffff;
 }
 
 .widget-memebers .nav-tabs .nav-link.active {
-    border-color: #5edfff;
-    background-color: #f7d35c;
+    border-color: #f7d35c;
+    background-color: brown;
     color: #ffffff;
 }
 

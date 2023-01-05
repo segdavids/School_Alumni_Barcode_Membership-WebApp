@@ -114,6 +114,7 @@ namespace WebApp.Admin
         {
             try
             {
+                string update = "";
                 string firstname = firstnametxt.Value;
                 string lastname = lastnametxt.Value;
                 string phone = phonetxt.Value;
@@ -148,14 +149,20 @@ namespace WebApp.Admin
                          OriginalFileName = FileUpload1.PostedFile.FileName.ToString();
                          extension = Path.GetExtension(FileUpload1.PostedFile.FileName).Substring(1).ToLower();
                          absolutedirectory = AdrelativePath + OriginalFileName;
+                        FileUpload1.PostedFile.SaveAs(AdrelativePath + OriginalFileName);
                     }
+               
+                     update = $"Update Users set FirstName='{firstname}',LastName='{lastname}',Phone='{phone}',NickName='{nickname}',CountryId='{country}',StateId='{state}',DOB='{dob}',Active='{active}',About='{about}',NextOfKin='{nok}',NOKPhone='{nokphone}',RankId='{ranking}',SpecializationId='{specialization}',Movies='{movies}',Books='{books}',Hobby='{hobby}',Facebook='{fb}',Twitter='{twite}',Instagram='{ig}',PictureURL='{OriginalFileName}' where MemberId = {mid}";
                 }
-                    string update = $"Update Users set FirstName='{firstname}',LastName='{lastname}',Phone='{phone}',NickName='{nickname}',CountryId='{country}',StateId='{state}',DOB='{dob}',Active='{active}',About='{about}',NextOfKin='{nok}',NOKPhone='{nokphone}',RankId='{ranking}',SpecializationId='{specialization}',Movies='{movies}',Books='{books}',Hobby='{hobby}',Facebook='{fb}',Twitter='{twite}',Instagram='{ig}',PictureURL='{OriginalFileName}' where MemberId = {mid}";
+                else
+                {
+                    update = $"Update Users set FirstName='{firstname}',LastName='{lastname}',Phone='{phone}',NickName='{nickname}',CountryId='{country}',StateId='{state}',DOB='{dob}',Active='{active}',About='{about}',NextOfKin='{nok}',NOKPhone='{nokphone}',RankId='{ranking}',SpecializationId='{specialization}',Movies='{movies}',Books='{books}',Hobby='{hobby}',Facebook='{fb}',Twitter='{twite}',Instagram='{ig}' where MemberId = {mid}";
+                }
                 string resp = BLL.NonQeryRequest(update);
                 switch (resp)
                 {
                     case "200":
-                        FileUpload1.PostedFile.SaveAs(AdrelativePath + OriginalFileName);
+                        //FileUpload1.PostedFile.SaveAs(AdrelativePath + OriginalFileName);
                         exceptiondiv.Visible = true;
                         exceptiondiv.Attributes.Add("class", "alert alert-success");
                         exceptiontxt.InnerText = "Member profile updated successfully";

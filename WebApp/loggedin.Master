@@ -76,16 +76,10 @@
                                      <li class="header-nav-item">
                                         <a href="about" class="menu-link">About Us</a>
                                     </li>
-                                    <li class="header-nav-item">
-                                        <ul class="sub-menu">
-                                            <li>
-                                                <a href="about">About</a>
-                                            </li>
-                                            <li>
-                                                <a href="contact">Contact Us</a>
-                                            </li>
-                                        </ul>
+                                  <li class="header-nav-item">
+                                        <a href="gallery" class="menu-link">Gallery</a>
                                     </li>
+                                   
                                       <li class="header-nav-item">
                                         <a href="shop" class="menu-link">Shop</a>
                                     </li>
@@ -178,76 +172,31 @@
         </div>
 
               <!-- Sidebar Right -->
-        <div class="fixed-sidebar right">
+         <div class="fixed-sidebar right">
             <div class="fixed-sidebar-right small-sidebar">
                 <div class="sidebar-toggle" id="chat-head-toggle">
                     <button class="chat-icon" type="button">
                         <i class="icofont-users"style="color:#f7d35c"></i>
                     </button>
                 </div>
-                <div class="sidebar-menu-wrap">
+              <div class="sidebar-menu-wrap">
                     <div class="mCustomScrollbar" data-mcs-theme="dark" data-mcs-axis="y">
                         <ul class="user-chat-list">
+                             <asp:Repeater ID="Repeater1" runat="server" >
+                            <ItemTemplate>
+                            
                             <li class="chat-item chat-open">
+                                <a href="/admin/member_profile?mid=<%# Eval("MemberId") %>">
                                 <div class="author-img">
-                                    <img src="media/figure/chat_1.jpg" alt="chat">
+                                    <img src="/media/userimages/<%# Eval("PictureURL") == DBNull.Value?"flat-user-icon-11.png":Eval("PictureURL") %>" style="height:44px;width:44px" alt="User"" >
                                     <span class="chat-status offline"></span>
                                 </div>
+                                    </a>
                             </li>
-                            <li class="chat-item chat-open">
-                                <div class="author-img">
-                                    <img src="media/figure/chat_2.jpg" alt="chat">
-                                    <span class="chat-status offline"></span>
-                                </div>
-                            </li>
-                            <li class="chat-item chat-open">
-                                <div class="author-img">
-                                    <img src="media/figure/chat_3.jpg" alt="chat">
-                                    <span class="chat-status offline"></span>
-                                </div>
-                            </li>
-                            <li class="chat-item chat-open">
-                                <div class="author-img">
-                                    <img src="media/figure/chat_4.jpg" alt="chat">
-                                    <span class="chat-status online"></span>
-                                </div>
-                            </li>
-                            <li class="chat-item chat-open">
-                                <div class="author-img">
-                                    <img src="media/figure/chat_5.jpg" alt="chat">
-                                    <span class="chat-status online"></span>
-                                </div>
-                            </li>
-                            <li class="chat-item chat-open">
-                                <div class="author-img">
-                                    <img src="media/figure/chat_6.jpg" alt="chat">
-                                    <span class="chat-status online"></span>
-                                </div>
-                            </li>
-                            <li class="chat-item chat-open">
-                                <div class="author-img">
-                                    <img src="media/figure/chat_7.jpg" alt="chat">
-                                    <span class="chat-status offline"></span>
-                                </div>
-                            </li>
-                            <li class="chat-item chat-open">
-                                <div class="author-img">
-                                    <img src="media/figure/chat_8.jpg" alt="chat">
-                                    <span class="chat-status offline"></span>
-                                </div>
-                            </li>
-                            <li class="chat-item chat-open">
-                                <div class="author-img">
-                                    <img src="media/figure/chat_9.jpg" alt="chat">
-                                    <span class="chat-status offline"></span>
-                                </div>
-                            </li>
-                            <li class="chat-item chat-open">
-                                <div class="author-img">
-                                    <img src="media/figure/chat_10.jpg" alt="chat">
-                                    <span class="chat-status offline"></span>
-                                </div>
-                            </li>
+                                
+                        </ItemTemplate>
+                                 </asp:Repeater>
+           
                         </ul>
                     </div>
                 </div>

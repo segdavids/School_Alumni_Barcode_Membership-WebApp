@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/loggedin.Master" AutoEventWireup="true" MaintainScrollPositionOnPostback="true" CodeBehind="newsfeed.aspx.cs" Inherits="WebApp.newsfeed" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/loggedin.Master" AutoEventWireup="true" CodeBehind="newsfeed.aspx.cs" Inherits="WebApp.newsfeed" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
      <title>DOBA2004 | NewsFeed</title>
 </asp:Content>
@@ -36,7 +36,7 @@
                                 <span class="member-text">
                                     Total Members:
                                 </span>
-                                <span class="member-count">08</span>
+                                <span class="member-count" id="totalmembers" runat="server"></span>
                             </a>
                         </li>
                     </ul>
@@ -49,16 +49,9 @@
                                 <select class="select2">
                                     <option>--Everything--</option>
                                     <option>Status</option>
-                                    <option>Quotes</option>
                                     <option>Photos</option>
                                     <option>Videos</option>
-                                    <option>Audios</option>
-                                    <option>slideshows</option>
-                                    <option>files</option>
-                                    <option>Updates</option>
                                     <option>New Members</option>
-                                    <option>Posts</option>
-                                    <option>New Groups</option>
                                 </select>
                             </div>
                         </li>
@@ -77,20 +70,25 @@
                         </li>
                     </ul>
                 </div>
+                   <!-- ALERT -->
+                              <div class="alert alert-danger" role="alert" id="exceptiondiv" runat="server" visible="false">
+                                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button><span id="exceptiontxt" runat="server"></span>
+                                </div>
                 <div class="row">
                     <div class="col-lg-8">
-                        
+                           <asp:Repeater ID="Repeater4" runat="server" >
+                            <ItemTemplate>
                         <div class="block-box post-view">
                             <div class="post-header">
                                 <div class="media">
                                     <div class="user-img">
-                                        <img src="media/figure/chat_10.jpg" alt="Aahat">
+                                        <img style="height:44px;width:44px" title="<%# Eval("fullname") %>" src="/media/userimages/<%# Eval("PictureURL") == DBNull.Value ?"flat-user-icon-11.png": Eval("PictureURL") %>" alt="">
                                     </div>
                                     <div class="media-body">
-                                        <div class="user-title"><a href="user-timeline.html">Aahat Akter</a> <i class="icofont-check"></i> posted in the group <a href="#">Tourist Guide</a> </div>
+                                        <div class="user-title"><a href="member_profile?mid=<%# Eval("PosterId") %>"><%# Eval("fullname") %> <i class="icofont-check"></i>posted in the group <a href="#"><%# Eval("GroupName") %></a></div>
                                         <ul class="entry-meta">
                                             <li class="meta-privacy"><i class="icofont-world"></i> Public</li>
-                                            <li class="meta-time">2 mins ago</li>
+                                            <li class="meta-time"><%# Convert.ToDateTime(Eval("DatePosted")).ToString("dd-MMM-yyyy") %></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -98,62 +96,65 @@
                                     <button class="dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
                                         ...
                                     </button>
-                                    <div class="dropdown-menu dropdown-menu-right">
-                                        <a class="dropdown-item" href="#">Close</a>
-                                        <a class="dropdown-item" href="#">Edit</a>
-                                        <a class="dropdown-item" href="#">Delete</a>
+                                    <div class="dropdown-menu">
+                                      <a class="dropdown-item" href="edit_post?pid=">Edit</a>
+                                        <asp:LinkButton ID="LinkButton1" class="dropdown-item" runat="server">Delete</asp:LinkButton>
                                     </div>
                                 </div>
                             </div>
                             <div class="post-body">
-                                <p>Dhaka is wonderful no matter what! <i class="icofont-wink-smile"></i></p>
-                                <div class="post-img">
-                                    <img src="media/figure/post_1.jpg" alt="Post">
-                                </div>
+                                <p><%# Eval("PostDetails") %></p>
+                               
                                 <div class="post-meta-wrap">
                                     <div class="post-meta">
                                         <div class="post-reaction">
-                                            <div class="reaction-icon">
-                                                <img src="media/figure/reaction_1.png" alt="icon">
-                                                <img src="media/figure/reaction_2.png" alt="icon">
-                                            </div>
-                                            <div class="meta-text">15</div>
+                                           <%-- <div class="reaction-icon">
+                                                <img src="/media/figure/reaction_1.png" alt="icon">
+                                                <img src="/media/figure/reaction_2.png" alt="icon">
+                                                <img src="/media/figure/reaction_3.png" alt="icon">
+                                            </div>--%>
+<%--                                            <div class="meta-text">Fahim Rahman, Aahat and 15 others</div>--%>
                                         </div>
                                     </div>
-                                    <div class="post-meta">
+                                    <%--<div class="post-meta">
                                         <div class="meta-text">2 Comments</div>
                                         <div class="meta-text">05 Share</div>
-                                    </div>
+                                    </div>--%>
                                 </div>
                             </div>
                             <div class="post-footer">
                                 <ul>
                                     <li class="post-react">
-                                        <a href="#"><i class="icofont-thumbs-up"></i>React!</a>
+                                         <asp:LinkButton ID="LinkButton4" runat="server"><i class="icofont-thumbs-up"></i>React!</asp:LinkButton>
                                         <ul class="react-list">
-                                            <li><a href="#"><img src="media/figure/reaction_1.png" alt="Like"></a></li>
-                                            <li><a href="#"><img src="media/figure/reaction_2.png" alt="Like"></a></li>
-                                            <li><a href="#"><img src="media/figure/reaction_4.png" alt="Like"></a></li>
-                                            <li><a href="#"><img src="media/figure/reaction_2.png" alt="Like"></a></li>
-                                            <li><a href="#"><img src="media/figure/reaction_7.png" alt="Like"></a></li>
-                                            <li><a href="#"><img src="media/figure/reaction_6.png" alt="Like"></a></li>
-                                            <li><a href="#"><img src="media/figure/reaction_5.png" alt="Like"></a></li>
+                                            <li><a href="#"><img src="/media/figure/reaction_1.png" alt="Like"></a></li>
+                                            <li><a href="#"><img src="/media/figure/reaction_2.png" alt="Like"></a></li>
+                                            <li><a href="#"><img src="/media/figure/reaction_4.png" alt="Like"></a></li>
+                                            <li><a href="#"><img src="/media/figure/reaction_2.png" alt="Like"></a></li>
+                                            <li><a href="#"><img src="/media/figure/reaction_7.png" alt="Like"></a></li>
+                                            <li><a href="#"><img src="/media/figure/reaction_6.png" alt="Like"></a></li>
+                                            <li><a href="#"><img src="/media/figure/reaction_5.png" alt="Like"></a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="#"><i class="icofont-comment"></i>Comment</a></li>
+                                    <li>
+                                        <asp:LinkButton ID="LinkButton2" OnClick="PostComment" runat="server"><i class="icofont-comment"></i>Comment</asp:LinkButton></li>
                                     <li class="post-share">
-                                        <a href="javascript:void(0);" class="share-btn"><i class="icofont-share"></i>Share</a>
+                                       <asp:LinkButton ID="LinkButton3" class="share-btn" runat="server"> <i class="icofont-share"></i>Share</asp:LinkButton>
                                         <ul class="share-list">
                                             <li><a href="#" class="color-fb"><i class="icofont-facebook"></i></a></li>
-                                            <li><a href="#" class="color-messenger"><i class="icofont-facebook-messenger"></i></a></li>
                                             <li><a href="#" class="color-instagram"><i class="icofont-instagram"></i></a></li>
                                             <li><a href="#" class="color-whatsapp"><i class="icofont-brand-whatsapp"></i></a></li>
                                             <li><a href="#" class="color-twitter"><i class="icofont-twitter"></i></a></li>
                                         </ul>
                                     </li>
                                 </ul>
+<%--                                <span style="color:brown;font-weight:700">This feature is not available for Admin</span>--%>
                             </div>
                         </div>
+                       </ItemTemplate>
+                              </asp:Repeater>
+                        
+                       
                      
                         <div class="block-box load-more-btn">
                             <a href="#" class="item-btn"><i class="icofont-refresh"></i>Load More Posts</a>
@@ -164,43 +165,37 @@
                         <div class="widget widget-memebers">
                             <div class="widget-heading">
                                 <h3 class="widget-title" style="color:brown">Members</h3>
-                                <div class="dropdown">
-                                    <button class="dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
-                                        ...
-                                    </button>
-                                    <div class="dropdown-menu dropdown-menu-right">
-                                        <a class="dropdown-item" href="#">Close</a>
-                                        <a class="dropdown-item" href="#">Edit</a>
-                                        <a class="dropdown-item" href="#">Delete</a>
-                                    </div>
-                                </div>
+                              
                             </div>
                             <ul class="nav nav-tabs" role="tablist">
                                 <li class="nav-item">
                                     <a class="nav-link active" data-toggle="tab"  href="#newest-member" style="color:brown;background-color:#f7d35c" role="tab" aria-selected="true">NEWEST</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#popular-member" style="color:brown;background-color:#f7d35c" role="tab" aria-selected="false">POPULAR</a>
+<%--                                    <a class="nav-link" data-toggle="tab" href="#popular-member" style="color:brown;background-color:#f7d35c" role="tab" aria-selected="false">POPULAR</a>--%>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#active-member" style="color:brown;background-color:#f7d35c" role="tab" aria-selected="false">ACTIVE</a>
-                                </li>
+                              
                             </ul>
                             <div class="tab-content">
                                 <div class="tab-pane fade show active" id="newest-member" role="tabpanel">
                                     <div class="members-list">
-                                        <div class="media">
-                                            <div class="item-img">
-                                                <a href="#">
-                                                    <img src="media/figure/chat_1.jpg" alt="Chat">
-                                                </a>
-                                            </div>
-                                            <div class="media-body">
-                                                <h4 class="item-title"><a href="#">Aahat Akter</a></h4>
-                                                <div class="item-username">@Aahat </div>
-                                                <div class="member-status online"><i class="icofont-check"></i></div>
-                                            </div>
-                                        </div>
+                                        <asp:Repeater ID="Repeater2" runat="server" >
+                                        <ItemTemplate>
+                                <div class="media">
+                                    <div class="item-img">
+                                        <a href="#">
+                                            <img src="/media/userimages/<%# Eval("PictureURL") == DBNull.Value ?"flat-user-icon-11.png": Eval("PictureURL") %>" style="height:44px;width:44px" alt="<%# Eval("fullname") %> ">
+                                        </a>
+                                    </div>
+                                    <div class="media-body">
+                                        <h4 class="item-title"><a href="/member_profile?mid=<%# Eval("MemberId") %>"><%# Eval("fullname") %> </a></h4>
+                                        <div class="item-username"><%# Eval("Email") %> </div>
+<%--                                        <div class="member-status online"><i class="icofont-check"></i></div>--%>
+                                    </div>
+                                </div>
+                                            </ItemTemplate>
+                                     </asp:Repeater>
+                                       
 
                                       
                                     </div>
@@ -224,24 +219,7 @@
                                       
                                     </div>
                                 </div>
-                                <div class="tab-pane fade" id="active-member" role="tabpanel">
-                                    <div class="members-list">
-                                        
-                                        <div class="media">
-                                            <div class="item-img">
-                                                <a href="#">
-                                                    <img src="media/figure/chat_3.jpg" alt="Chat">
-                                                </a>
-                                            </div>
-                                            <div class="media-body">
-                                                <h4 class="item-title"><a href="#">Alia Karon</a></h4>
-                                                <div class="item-username">@Alia</div>
-                                                <div class="member-status online"><i class="icofont-check"></i></div>
-                                            </div>
-                                        </div>
-                             
-                                    </div>
-                                </div>
+                            
                             </div>
                         </div>
                         <div class="widget widget-groups">
@@ -250,52 +228,31 @@
                                
                             </div>
                             <ul class="nav nav-tabs" role="tablist">
+                               
                                 <li class="nav-item">
-                                    <a class="nav-link active" data-toggle="tab" href="#active-group" role="tab" style="color:brown;background-color:#f7d35c" aria-selected="true">ACTIVE</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#popular-group" role="tab" style="color:brown;background-color:#f7d35c" aria-selected="false">POPULAR</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#newest-group" role="tab" style="color:brown;background-color:#f7d35c" aria-selected="false">NEWEST</a>
+                                    <a class="nav-link active" data-toggle="tab" href="#newest-group" role="tab" style="color:brown;background-color:#f7d35c" aria-selected="false">NEWEST</a>
                                 </li>
                             </ul>
                             <div class="tab-content">
-                                <div class="tab-pane fade show active" id="active-group" role="tabpanel">
+                              
+                                <div class="tab-pane fade show active" id="newest-group" role="tabpanel">
                                     <div class="group-list">
-                                        <div class="media">
-                                            <div class="item-img">
-                                                <a href="#">
-                                                    <img src="media/groups/groups_9.jpg" alt="group">
-                                                </a>
-                                            </div>
-                                            <div class="media-body">
-                                                <h4 class="item-title"><a href="#">Kito Development</a></h4>
-                                                <div class="item-member">265 Members</div>
-                                            </div>
-                                        </div>
-
-                                       
-                                    </div>
-                                </div>
-                                <div class="tab-pane fade" id="popular-group" role="tabpanel">
-                                    <div class="group-list">
-                                         <div class="media">
-                                            <div class="item-img">
-                                                <a href="#">
-                                                    <img src="media/groups/groups_10.jpg" alt="group">
-                                                </a>
-                                            </div>
-                                            <div class="media-body">
-                                                <h4 class="item-title"><a href="#">Chef Express</a></h4>
-                                                <div class="item-member">4,265 Members</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="tab-pane fade" id="newest-group" role="tabpanel">
-                                    <div class="group-list">
-                                         <div class="media">
+                                        <asp:Repeater ID="Repeater3" runat="server">
+                                            <ItemTemplate>
+                                                <div class="media">
+                                                    <div class="item-img">
+                                                        <a href="#">
+                                                            <img src="/media/groups/user_group1.jpg" style="height: 44px; width: 44px" alt="author">
+                                                        </a>
+                                                    </div>
+                                                    <div class="media-body">
+                                                        <h4 class="item-title"><a href="group_details?gid=<%# Eval("GroupId") %>&gnm=<%# Eval("GroupName") %>" style="color: brown"><%# Eval("GroupName") %></a></h4>
+                                                        <div class="item-member"><%# Eval("NumberofUsers") %> Members</div>
+                                                    </div>
+                                                </div>
+                                            </ItemTemplate>
+                                        </asp:Repeater>
+                                      <%--   <div class="media">
                                             <div class="item-img">
                                                 <a href="#">
                                                     <img src="media/groups/groups_11.jpg" alt="group">
@@ -305,7 +262,7 @@
                                                 <h4 class="item-title"><a href="#">Photo Contest</a></h4>
                                                 <div class="item-member">1,265 Members</div>
                                             </div>
-                                        </div>
+                                        </div>--%>
                                     </div>
                                 </div>
                             </div>

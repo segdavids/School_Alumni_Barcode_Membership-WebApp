@@ -21,7 +21,7 @@
                                                 {
                                                     string profileurl = profileimage.ToString();
                                             %>
-                            <img src="/media/userimages/<%:  profileurl == ""?"flat-user-icon-11.png":profileurl %>" style="height:100px;width:100px" alt="User">
+                            <img src="/media/userimages/<%:  profileurl == ""?"flat-user-icon-11.png":profileurl %>" style="height:115px;width:115px" alt="User">
                                             <% } %>
                             </div>
 
@@ -74,6 +74,7 @@
                         <li><a href="/admin/manage_state">Edit state</a></li>
                         <li ><a href="/admin/manage_country">Edit Country</a></li>
                         <li ><a href="/admin/manage_shop_category">Category</a></li>
+                        <li ><a href="/admin/profile_visibility"> Visibility</a></li>
                         <li></li>
       
                     </ul>

@@ -88,7 +88,7 @@ namespace WebApp.Admin
             try
             {
                 groupname.InnerHtml = gname;
-                string getuser = $"select a.*,b.FirstName + ' '+ b.LastName as Fullname, b.PictureURL from GroupPost a join Users b on a.PosterId=b.MemberId where a.GroupId={gid} and Deleted='false'";
+                string getuser = $"select a.*,b.FirstName + ' '+ b.LastName as Fullname, b.PictureURL from GroupPost a join Users b on a.PosterId=b.MemberId where a.GroupId={gid} and a.Deleted='false'";
                 DataTable dt = BLL.GetRequest(getuser);
                 Repeater4.DataSource = dt;
                 Repeater4.DataBind();

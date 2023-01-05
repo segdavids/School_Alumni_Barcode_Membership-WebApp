@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using WebApp.Models;
 
 namespace WebApp
 {
@@ -11,7 +12,13 @@ namespace WebApp
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            featuredmemeber();
+        }
 
+        public void featuredmemeber()
+        {
+            Repeater1.DataSource = BLL.GetRequest("select top 5 * from Users order by NEWID()");
+            Repeater1.DataBind();
         }
     }
 }

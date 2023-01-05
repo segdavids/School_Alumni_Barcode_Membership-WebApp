@@ -53,7 +53,7 @@ namespace WebApp.Admin
         {
             try
             {
-                string fetch = $"select a.*,c.LocationName CountryName from Users a left join Country c on a.CountryId=c.LocationId";
+                string fetch = $"select a.*,c.LocationName CountryName from Users a left join Country c on a.CountryId=c.LocationId where a.Deleted not in ('True')";
                 DataTable dt = BLL.GetRequest(fetch);
                 Repeater1.DataSource = dt;
                 Repeater1.DataBind();

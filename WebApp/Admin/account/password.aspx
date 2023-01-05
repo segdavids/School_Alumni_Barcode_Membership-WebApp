@@ -73,6 +73,7 @@
                         <li><a href="/admin/manage_state">Edit state</a></li>
                         <li ><a href="/admin/manage_country">Edit Country</a></li>
                         <li ><a href="/admin/manage_shop_category">Category</a></li>
+                        <li ><a href="/admin/profile_visibility"> Visibility</a></li>
                         <li></li>
       
                     </ul>

@@ -99,7 +99,9 @@
                                      <li class="header-nav-item">
                                         <a href="about" class="menu-link">About Us</a>
                                     </li>
-                                  
+                                  <li class="header-nav-item">
+                                        <a href="/gallery" class="menu-link">Gallery</a>
+                                    </li>
                                       <li class="header-nav-item">
                                         <a href="shop" class="menu-link">Shop</a>
                                     </li>
@@ -128,7 +130,7 @@
                                     </li>--%>
 
                                     <li class="login-btn">
-                                        <a href="login" class="item-btn" style="background-color:#f7d35c;color:brown"><i class="fas fa-user"></i>Login</a>
+                                        <a href="/member/login" class="item-btn" style="background-color:#f7d35c;color:brown"><i class="fas fa-user"></i>Login</a>
                                     </li>
                                 </ul>
                             </div>

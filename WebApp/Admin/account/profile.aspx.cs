@@ -18,24 +18,24 @@ namespace WebApp.Admin.account
         int memberId;
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            getsuqetrstring();
         }
 
         public void getsuqetrstring()
         {
             try
             {
-                string MemberId = !string.IsNullOrEmpty(Request.QueryString["mid"]) ? Request.QueryString["mid"] : 0.ToString();
+                string MemberId = Session["UserId"].ToString();
                 memberId = Convert.ToInt32(MemberId);
 
                 if (memberId != 0)
                 {
                     //RENDER USER DETAILS
-                    string gtusr = $"select a.*, st.StateName,ct.LocationName,rk.RankName,sp.SpecializationName from Users a left join State st on a.StateId = st.StateId left join Country ct on a.CountryId=ct.LocationId left join MemberRanking rk on a.RankId=rk.RankId left join Specialization sp on a.SpecializationId=sp.SpecializationId where MemberId={memberId}";
+                    string gtusr = $"select a.* from AdminUser a where AdminId={memberId}";
                     DataTable dt = BLL.GetRequest(gtusr);
                     if (dt.Rows.Count > 0)
                         Repeater1.DataSource = dt;
-                    Repeater1.DataBind();
+                        Repeater1.DataBind();
 
                     //Button1.Visible = false;
                     //candidateprofilediv.Visible = false;

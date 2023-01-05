@@ -68,25 +68,27 @@
                     <ul class="menu-list">
                         <li ><a href="/admin/settings">Edit Profile</a></li>
                         <li ><a href="/admin/account/password"> Password</a></li>
-                         <li class="active"><a href="#">Edit Title</a></li>
-                        <li><a href="/admin/manage_role">Edit Role</a></li>
+                         <li ><a href="/admin/manage_titles">Edit Title</a></li>
+                        <li class="active"><a href="#">Edit Role</a></li>
                         <li><a href="/admin/manage_state">Edit state</a></li>
                         <li ><a href="/admin/manage_country">Edit Country</a></li>
                         <li ><a href="/admin/manage_shop_category">Category</a></li>
+                        <li ><a href="/admin/profile_visibility"> Visibility</a></li>
                         <li></li>
       
                     </ul>
                 </div>
 
                 <div class="block-box product-filter">
+
                     <div id="contact-form">
                         <div class="row gutters-20">
-                            <div class="table-responsive" >
+                            <div class="table-responsive container col-12" >
                                 <table class="table table-bordered text-nowrap key-buttons">
                                     <thead>
                                         <tr>
                                             <th class="border-bottom-0">SN</th>
-                                            <th class="border-bottom-0">Tile Name</th>
+                                            <th class="border-bottom-0">Rank Name</th>
                                             <th class="border-bottom-0">Action</th>
                                         </tr>
                                     </thead>
@@ -95,17 +97,17 @@
                                             <ItemTemplate>
                                                 <tr>
                                                     <td><%#Container.ItemIndex+1 %>
-                                                        <asp:Label ID="entrytxt" Visible="false" runat="server" Text='<%# Eval("TitleId") %>' />
+                                                        <asp:Label ID="entrytxt" Visible="false" runat="server" Text='<%# Eval("ItemId") %>' />
                                                     </td>
                                                     <td>
-                                                         <asp:Label ID="titleidlbl" runat="server" Text='<%# Eval("TitleName") %>'></asp:Label>
-                                                        <asp:TextBox ID="TextBox1" class="form-control mb-4" type="text" Text='<%# Eval("TitleName") %>' Visible="false" runat="server"></asp:TextBox>
+                                                         <asp:Label ID="RoleIdlbl" runat="server" Text='<%# Eval("RankName") %>'></asp:Label>
+                                                        <asp:TextBox ID="TextBox1" class="form-control mb-4" type="text" Text='<%# Eval("RankName") %>' Visible="false" runat="server"></asp:TextBox>
                                                     </td>
                                                     <td class="align-middle">
                                                         <div class="btn-group align-top">
                                                             <asp:LinkButton ID="updatebtn" Visible="false" class="btn btn-sm btn-success btn-svg" type="button" OnClick="Update" runat="server">Update</asp:LinkButton>
                                                              <asp:LinkButton ID="editbutton" class="btn btn-sm btn-warning btn-svg" type="button" OnClick="Edit" runat="server">Edit</asp:LinkButton>
-                                                            <asp:LinkButton ID="deletebtn" ToolTip="Delete Account" OnClick="Delete" OnClientClick="alert('This Title cannot be deleted because it is already in use?');" runat="server" class="btn btn-sm btn-danger btn-svg" type="button"><svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M8 9h8v10H8z" opacity=".3"/><path d="M15.5 4l-1-1h-5l-1 1H5v2h14V4zM6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM8 9h8v10H8V9z"/></svg></asp:LinkButton>
+                                                            <asp:LinkButton ID="deletebtn" ToolTip="Delete Account" OnClick="Delete" OnClientClick="alert('This Rank cannot be deleted because it is already in use?');" runat="server" class="btn btn-sm btn-danger btn-svg" type="button"><svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M8 9h8v10H8z" opacity=".3"/><path d="M15.5 4l-1-1h-5l-1 1H5v2h14V4zM6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM8 9h8v10H8V9z"/></svg></asp:LinkButton>
 
                                                         </div>
                                                     </td>

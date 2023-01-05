@@ -141,8 +141,12 @@
     <Content Include="Admin\manage_titles.aspx" />
     <Content Include="Admin\members.aspx" />
     <Content Include="Admin\member_profile.aspx" />
+    <Content Include="Admin\newsfeed.aspx" />
+    <Content Include="Admin\profile_visibility.aspx" />
+    <Content Include="Admin\schedule.aspx" />
     <Content Include="Admin\settings.aspx" />
     <Content Include="Admin\shop.aspx" />
+    <Content Include="Admin\product_details.aspx" />
     <Content Include="all_groups.aspx" />
     <Content Include="assets\css\app.css" />
     <Content Include="assets\js\app.js" />
@@ -155,14 +159,14 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="default.aspx" />
-    <Content Include="donate.aspx" />
-    <Content Include="group_details.aspx" />
     <Content Include="dependencies\bootstrap-validator\js\bootstrap.min.css" />
     <Content Include="dependencies\bootstrap-validator\js\validator.min.js" />
     <Content Include="dependencies\bootstrap\css\bootstrap.min.css" />
     <Content Include="dependencies\bootstrap\css\bootstrap.min.js" />
     <Content Include="dependencies\bootstrap\js\bootstrap.min.js" />
     <Content Include="dependencies\elevate-zoom\jquery.elevatezoom.js" />
+    <Content Include="dependencies\icofont\fonts\icofont.woff" />
+    <Content Include="dependencies\icofont\fonts\icofont.woff2" />
     <Content Include="dependencies\icofont\icofont.min.css" />
     <Content Include="dependencies\imagesloaded\js\bootstrap.min.css" />
     <Content Include="dependencies\imagesloaded\js\imagesloaded.pkgd.min.js" />
@@ -187,6 +191,9 @@
     <Content Include="dependencies\slick-carousel\css\slick.css" />
     <Content Include="dependencies\slick-carousel\js\bootstrap.min.css" />
     <Content Include="dependencies\slick-carousel\js\slick.min.js" />
+    <Content Include="donate.aspx" />
+    <Content Include="gallery.aspx" />
+    <Content Include="group_details.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -199,10 +206,9 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="dmgs.Master" />
-    <Content Include="dependencies\icofont\fonts\icofont.woff" />
-    <Content Include="dependencies\icofont\fonts\icofont.woff2" />
     <Content Include="loggedin.Master" />
     <Content Include="Admin\account\admin.Master" />
+    <Content Include="memba.Master" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="media\defaultimage.png" />
     <Content Include="media\figure\author_1.jpg" />
@@ -234,7 +240,15 @@
     <Content Include="media\logo32.jpg" />
     <Content Include="media\userimages\flat-user-icon-11.png" />
     <Content Include="members.aspx" />
+    <Content Include="member\forgot_password.aspx" />
+    <Content Include="member\home.aspx" />
+    <Content Include="member\login.aspx" />
+    <Content Include="member\password.aspx" />
+    <Content Include="member\profile.aspx" />
+    <Content Include="member_profile.aspx" />
     <Content Include="newsfeed.aspx" />
+    <Content Include="product_details.aspx" />
+    <Content Include="schedule.aspx" />
     <Content Include="shop.aspx" />
     <Content Include="summary.aspx" />
     <Content Include="media\about\about_1.png" />
@@ -590,6 +604,27 @@
     <Compile Include="Admin\member_profile.aspx.designer.cs">
       <DependentUpon>member_profile.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\newsfeed.aspx.cs">
+      <DependentUpon>newsfeed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\newsfeed.aspx.designer.cs">
+      <DependentUpon>newsfeed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\profile_visibility.aspx.cs">
+      <DependentUpon>profile_visibility.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\profile_visibility.aspx.designer.cs">
+      <DependentUpon>profile_visibility.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\schedule.aspx.cs">
+      <DependentUpon>schedule.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\schedule.aspx.designer.cs">
+      <DependentUpon>schedule.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\settings.aspx.cs">
       <DependentUpon>settings.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -603,6 +638,13 @@
     </Compile>
     <Compile Include="Admin\shop.aspx.designer.cs">
       <DependentUpon>shop.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\product_details.aspx.cs">
+      <DependentUpon>product_details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\product_details.aspx.designer.cs">
+      <DependentUpon>product_details.aspx</DependentUpon>
     </Compile>
     <Compile Include="all_groups.aspx.cs">
       <DependentUpon>all_groups.aspx</DependentUpon>
@@ -648,6 +690,13 @@
     <Compile Include="donate.aspx.designer.cs">
       <DependentUpon>donate.aspx</DependentUpon>
     </Compile>
+    <Compile Include="gallery.aspx.cs">
+      <DependentUpon>gallery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="gallery.aspx.designer.cs">
+      <DependentUpon>gallery.aspx</DependentUpon>
+    </Compile>
     <Compile Include="group_details.aspx.cs">
       <DependentUpon>group_details.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -672,6 +721,13 @@
     <Compile Include="dmgs.Master.designer.cs">
       <DependentUpon>dmgs.Master</DependentUpon>
     </Compile>
+    <Compile Include="memba.Master.cs">
+      <DependentUpon>memba.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="memba.Master.designer.cs">
+      <DependentUpon>memba.Master</DependentUpon>
+    </Compile>
     <Compile Include="members.aspx.cs">
       <DependentUpon>members.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -679,12 +735,68 @@
     <Compile Include="members.aspx.designer.cs">
       <DependentUpon>members.aspx</DependentUpon>
     </Compile>
+    <Compile Include="member\forgot_password.aspx.cs">
+      <DependentUpon>forgot_password.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="member\forgot_password.aspx.designer.cs">
+      <DependentUpon>forgot_password.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="member\home.aspx.cs">
+      <DependentUpon>home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="member\home.aspx.designer.cs">
+      <DependentUpon>home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="member\login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="member\login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="member\password.aspx.cs">
+      <DependentUpon>password.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="member\password.aspx.designer.cs">
+      <DependentUpon>password.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="member\profile.aspx.cs">
+      <DependentUpon>profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="member\profile.aspx.designer.cs">
+      <DependentUpon>profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="member_profile.aspx.cs">
+      <DependentUpon>member_profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="member_profile.aspx.designer.cs">
+      <DependentUpon>member_profile.aspx</DependentUpon>
+    </Compile>
     <Compile Include="newsfeed.aspx.cs">
       <DependentUpon>newsfeed.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="newsfeed.aspx.designer.cs">
       <DependentUpon>newsfeed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="product_details.aspx.cs">
+      <DependentUpon>product_details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="product_details.aspx.designer.cs">
+      <DependentUpon>product_details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="schedule.aspx.cs">
+      <DependentUpon>schedule.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="schedule.aspx.designer.cs">
+      <DependentUpon>schedule.aspx</DependentUpon>
     </Compile>
     <Compile Include="shop.aspx.cs">
       <DependentUpon>shop.aspx</DependentUpon>

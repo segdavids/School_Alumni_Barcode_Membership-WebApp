@@ -43,6 +43,10 @@
                             </div>
                         </div>
                     </div>
+                       <!-- ALERT -->
+                              <div class="alert alert-danger" role="alert" id="exceptiondiv" runat="server" visible="false">
+                                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button><span id="exceptiontxt" runat="server"></span>
+                                </div>
                     <div class="box-item search-filter">
                         <div class="dropdown">
                             <label>Order By:</label>
@@ -69,41 +73,53 @@
                         </ul>
                     </div>
                 </div>
+
                 <div id="user-view" class="user-grid-view">
                     <div class="row gutters-20">
+                         <asp:Repeater ID="Repeater1" runat="server" OnItemCreated="Repeater1_ItemCreated">
+         <ItemTemplate>
+              <asp:Label ID="entrytxt"  Visible = "false" runat="server" Text='<%# Eval("GroupId") %>' />
                         <div class="col-xl-3 col-lg-4 col-md-6">
                             <div class="widget-author user-group">
                                 <div class="author-heading">
                                     <div class="cover-img">
-                                        <img src="media/figure/cover_1.jpg" alt="cover">
+                                        <img src="/media/figure/cover_1.jpg" alt="cover">
                                     </div>
                                     <div class="profile-img">
-                                        <a href="#">
-                                            <img src="media/groups/user_group1.jpg" alt="author">
+                                        <a href="group_details?gid=<%# Eval("GroupId") %>&gnm=<%# Eval("GroupName") %>">
+                                            <img src="/media/groups/user_group1.jpg" alt="author">
                                         </a>
                                     </div>
                                     <div class="profile-name">
-                                        <h4 class="author-name"><a href="group_details?gid=<%--<%#GroupId %>--%>" style="color:brown">Tourist Ways</a></h4>
-                                        <div class="author-location">@tourist</div>
+                                        <h4 class="author-name"><a href="group_details?gid=<%# Eval("GroupId") %>&gnm=<%# Eval("GroupName") %>" style="color:brown"><%# Eval("GroupName") %></a></h4>
+                                        <div class="author-location"><%# Eval("Description") %></div>
                                     </div>
                                 </div>
                                 <ul class="member-thumb">
-                                    <li><img src="media/figure/chat_1.jpg" alt="member"></li>
-                                    <li><img src="media/figure/chat_2.jpg" alt="member"></li>
-                                    <li><img src="media/figure/chat_3.jpg" alt="member"></li>
-                                    <li><img src="media/figure/chat_5.jpg" alt="member"></li>
-                                    <li><i class="icofont-plus"></i></li>
+                                    <% foreach (var user in studentList)  {
+                                            string fullname =  user.Fullname;
+                                            int userid =  user.UserId;
+                                            string picurl =  user.PictureURL;
+
+                                            %>
+                                    <li><a href="member_profile?mid=<%: userid %>"> <img src="/media/userimages/<%:  picurl == ""?"flat-user-icon-11.png": picurl %>" style="height:44px;width:44px" title="<%: fullname %>" ></a></li>
+                                    <% } %>
+
+                                   <li style="background-color:brown;"><a href="add_membertogrpup" title="ADD MEMBER TO GROUP"><i class="icofont-plus" style="color:#f7d35c" ></i></a></li>
                                 </ul>
                                 <ul class="author-statistics">
-                                    <li>
-                                        <a href="#"><span class="item-number">25</span> <span class="item-text">GROUP POSTS</span></a>
+                                    <li >
+                                        <a href="#"><span class="item-number"><%# Eval("NumberofUsers") %></span> <span class="item-text"> MEMBERS</span></a>
                                     </li>
                                     <li>
-                                        <a href="#"><span class="item-number">230</span> <span class="item-text">ALL MEMBERS</span></a>
+<%--                                        <a href="/admin/edit_group?gid=<%#Eval("GroupId") %>"<span class="item-number"><i class="icofont-edit"></i></span> <span class="item-text">EDIT GROUP</span></a>--%>
                                     </li>
                                 </ul>
                             </div>
                         </div>
+                       
+             </ItemTemplate>
+                             </asp:Repeater>
                        
 
                         

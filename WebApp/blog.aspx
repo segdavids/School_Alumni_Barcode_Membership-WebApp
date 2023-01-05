@@ -3,7 +3,7 @@
     <title>DOBA2004 | Blog</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <!-- Page Content -->
+     <!-- Page Content -->
         <div class="page-content">
 
             <!--=====================================-->
@@ -15,74 +15,91 @@
                     <div class="banner-content">
                         <div class="media">
                             <div class="item-img">
-                                <img src="media/banner/user_1.jpg" alt="User">
+                                <img src="/media/banner/user_1.jpg" alt="User">
                             </div>
                             <div class="media-body">
-                                <h3 class="item-title">Rebeca Powel</h3>
-                                <div class="item-subtitle">United State of America</div>
+                                <h3 class="item-title">DOBA2004 Blogs</h3>
+                                <div class="item-subtitle">Nigeria Chapter</div>
                                 <ul class="item-social">
-                                    <li><a href="#" class="bg-fb"><i class="icofont-facebook"></i></a></li>
+                                     <li><a href="#" class="bg-fb"><i class="icofont-facebook"></i></a></li>
                                     <li><a href="#" class="bg-twitter"><i class="icofont-twitter"></i></a></li>
-                                    <li><a href="#" class="bg-dribble"><i class="icofont-instagram"></i></a></li>
+                                    <li><a href="#" class="bg-instagram"><i class="icofont-instagram"></i></a></li>
+                                    <li><a href="#" class="bg-success"><i class="icofont-whatsapp"></i></a></li>
 
                                 </ul>
                                 <ul class="user-meta">
-                                    <li>Posts: <span>30</span></li>
-                                    <li>Comments: <span>12</span></li>
-                                    <li>Views: <span>1.2k</span></li>
+                                    <li>Posts: <span id="noofpost" runat="server"></span></li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                 </div>
-            
-                <div class="block-box user-search-bar justify-content-between">
-                    <div class="box-item">
-                        <div class="item-show-title">Total 20 Posts</div>
-                    </div>
-                    <div class="box-item search-filter">
-                        <div class="dropdown">
-                            <label>Order By:</label>
-                            <button class="dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">Newest Post</button>
-                            <div class="dropdown-menu dropdown-menu-right">
-                                <a class="dropdown-item" href="#">All Post</a>
-                                <a class="dropdown-item" href="#">Newest Post</a>
-                                <a class="dropdown-item" href="#">Oldest Post</a>
-                            </div>
+          
+                 <div class="block-box product-filter">
+                        <label>Order By:</label>
+                        <div class="select-box col-3" >
+                            <select class="select2" data-placeholder="Select a Category">
+                                <option value="1">All Post</option>
+                                <option value="2">Newest Post</option>
+                                <option value="2">Oldest Post</option>
+                               
+                            </select>
+                            
                         </div>
+                
                     </div>
-                </div>
-                <div class="row gutters-20">
-                    <div class="col-lg-4 col-md-6">
-                        <div class="block-box user-blog">
-                            <div class="blog-img">
-                                <a href="#"><img src="media/blog/blog_4.jpg" alt="Blog"></a>
-                            </div>
-                            <div class="blog-content">
-                                <div class="blog-category">
-                                    <a href="#" style="color:brown;background-color:#f7d35c">Community</a>
-                                    <a href="#" style="color:brown;background-color:#f7d35c">Inspiration</a>
+                  
+                 <!-- ALERT -->
+                              <div class="alert alert-danger" role="alert" id="exceptiondiv" runat="server" visible="false">
+                                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button><span id="exceptiontxt" runat="server"></span>
                                 </div>
-                                <h3 class="blog-title"><a href="blog_details?bid=" style="color:brown">Spoke with the developer sety 2020 Gaming Area</a></h3>
-                                <div class="blog-date"><i class="icofont-calendar" style="color:brown"></i> 15 October, 2020</div>
-                                <p>when ann unknown printer took galley type and scrambled it to make aretype specimen book has survived not only.</p>
-                            </div>
-                            <div class="blog-meta">
-                                <ul>
-                                    <li class="blog-reaction">
+               
+                   <div class="block-box post-input-tab">
+                           
+                         
+                           
+                        </div>
+                <div class="row gutters-20">
+                    <asp:Repeater ID="Repeater1" runat="server" OnItemCreated="Repeater1_ItemCreated">
+                        <ItemTemplate>
+                            <div class="col-lg-4 col-md-6">
+                                <asp:Label ID="entrytxt" Visible="false" runat="server" Text='<%# Eval("BlogId") %>' />
+                                <div class="block-box user-blog">
+                                    <div class="blog-img">
+                                        <a href="#">
+                                            <img src="/media/blog/<%# Eval("ThumbnailURL") ==DBNull.Value?"blog_2.jpg":Eval("ThumbnailURL") %>" style="height: 200px; width: 376px" alt="Blog"></a>
+                                    </div>
+                                    <div class="blog-content">
+                                        <div class="blog-category">
+                                            <% foreach (var tagitem in tags)
+                                                {
+                                                    string tagname = tagitem.ToLower().ToString();
+                                            %>
+                                            <a href="#" style="color: brown; background-color: #f7d35c"><%:  tagname %></a>
+                                            <% } %>
+                                        </div>
+                                        <h3 class="blog-title"><a href="blog_details?bid=<%# Eval("BlogId") %>" style="color: brown"><%# Eval("PostTitle") %></a></h3>
+                                        <div class="blog-date"><i class="icofont-calendar" style="color: brown"></i><%# Convert.ToDateTime(Eval("PostDate")).ToString("dd MMMM, yyyy") %>  </div>
+
+                                        <p><%# Eval("PostContent") %></p>
+                                    </div>
+                                    <div class="blog-meta">
+                                        <ul>
+                                            <%-- <li class="blog-reaction">
                                         <div class="reaction-icon">
-                                            <img src="media/figure/reaction_1.png" alt="icon">
-                                            <img src="media/figure/reaction_2.png" alt="icon">
-                                            <img src="media/figure/reaction_3.png" alt="icon">
+                                            <img src="/media/figure/reaction_1.png" alt="icon">
+                                            <img src="/media/figure/reaction_2.png" alt="icon">
+                                            <img src="/media/figure/reaction_3.png" alt="icon">
                                         </div>
                                         <div class="meta-text">+ 15 others</div>
-                                    </li>
-                                    <li><i class="icofont-comment"></i> 05</li>
-                                </ul>
+                                    </li>--%>
+                                            <li><i class="icofont-comment"></i><%# Eval("NoOfComment") %></li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                 
+                        </ItemTemplate>
+                    </asp:Repeater>
               
                 
                   

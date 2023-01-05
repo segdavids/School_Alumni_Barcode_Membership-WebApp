@@ -58,39 +58,32 @@
                                         <a href="#" class="menu-link have-sub">Community</a>
                                        <ul class="sub-menu">
                                                     <li>
-                                                        <a href="newsfeed">NewsFeed</a>
+                                                        <a href="/newsfeed">NewsFeed</a>
                                                     </li>
                                                     <li>
-                                                        <a href="members">Members</a>
+                                                        <a href="/members">Members</a>
                                                     </li>
                                                     <li>
-                                                        <a href="all_groups">Groups</a>
+                                                        <a href="/all_groups">Groups</a>
                                                     </li>
                                                     
                                                 </ul>
                                     </li>
                                   <li class="header-nav-item">
-                                        <a href="blog" class="menu-link">Blog</a>
+                                        <a href="/blog" class="menu-link">Blog</a>
                                     </li>
                                      <li class="header-nav-item">
-                                        <a href="about" class="menu-link">About Us</a>
+                                        <a href="/about" class="menu-link">About Us</a>
                                     </li>
-                                    <li class="header-nav-item">
-                                        <ul class="sub-menu">
-                                            <li>
-                                                <a href="about">About</a>
-                                            </li>
-                                            <li>
-                                                <a href="contact">Contact Us</a>
-                                            </li>
-                                        </ul>
+                                   <li class="header-nav-item">
+                                        <a href="/gallery" class="menu-link">Gallery</a>
                                     </li>
                                       <li class="header-nav-item">
-                                        <a href="shop" class="menu-link">Shop</a>
+                                        <a href="/shop" class="menu-link">Shop</a>
                                     </li>
                                  
                                       <li class="header-nav-item">
-                                        <a href="donate" class="menu-link">Donate</a>
+                                        <a href="/donate" class="menu-link">Donate</a>
                                     </li>
                                     <li class="header-nav-item">
                                         <a href="contact" class="menu-link">Contact Us</a>
@@ -212,13 +205,20 @@
                 <div class="sidebar-menu-wrap">
                     <div class="mCustomScrollbar" data-mcs-theme="dark" data-mcs-axis="y">
                         <ul class="user-chat-list">
+                             <asp:Repeater ID="Repeater1" runat="server" OnItemCreated="Repeater1_ItemCreated">
+                            <ItemTemplate>
+                            
                             <li class="chat-item chat-open">
+                                <a href="/admin/member_profile?mid=<%# Eval("MemberId") %>">
                                 <div class="author-img">
-                                    <img src="/media/figure/chat_1.jpg" alt="chat">
+                                    <img src="/media/userimages/<%# Eval("PictureURL") == DBNull.Value?"flat-user-icon-11.png":Eval("PictureURL") %>" style="height:44px;width:44px" alt="User"" >
                                     <span class="chat-status offline"></span>
                                 </div>
+                                    </a>
                             </li>
-                        
+                                
+                        </ItemTemplate>
+                                 </asp:Repeater>
            
                         </ul>
                     </div>

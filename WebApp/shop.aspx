@@ -3,7 +3,7 @@
     <title>DOBA2004 | Shop</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-     <!-- Page Content -->
+    <!-- Page Content -->
         <div class="page-content">
 
             <!--=====================================-->
@@ -22,6 +22,7 @@
                             </ul>
                         </div>
                     </div>
+                 
                     <div class="block-box product-filter">
                         <label>Filter By:</label>
                         <div class="select-box">
@@ -46,13 +47,13 @@
                         <div class="col-lg-4 col-md-6">
                             <div class="block-box product-box">
                                 <div class="product-img">
-                                    <a href="product_details?pid="><img src="media/figure/product_7.png" alt="product"></a>
+                                    <a href="product_details?pid="><img src="/media/figure/product_7.png" alt="product"></a>
                                 </div>
                                 <div class="product-content">
                                     <div class="item-category">
                                         <a href="#">Merch</a>
                                     </div>
-                                    <h3 class="product-title"><a href="single-shop.html">DMGS SweatShirt</a></h3>
+                                    <h3 class="product-title"><a href="product_details?pid=">DMGS SweatShirt</a></h3>
                                     <div class="product-price" style="color:brown">N10,000.00</div>
                                 </div>
                             </div>

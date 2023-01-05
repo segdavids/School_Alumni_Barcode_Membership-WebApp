@@ -3,34 +3,45 @@
      <title>DOBA2004 | Blog Details</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-     <!-- Page Content -->
+         <!-- Page Content -->
         <div class="page-content">
 
             <!--=====================================-->
             <!--=        Newsfeed  Area Start       =-->
             <!--=====================================-->
             <div class="container">
+                <div class="col-12 form-group">
+                                             <a href="blog" type="submit" class="submit-btn">Back to Blogs</a> 
+                                            </div>
+                <asp:Repeater ID="Repeater1" runat="server" OnItemCreated="Repeater1_ItemCreated">
+         <ItemTemplate>
                 <div class="block-box user-single-blog">
+                    <asp:Label ID="entrytxt"  Visible = "false" runat="server" Text='<%# Eval("BlogId") %>' />
                     <div class="blog-thumbnail">
-                        <img src="media/banner/hero_1older.jpg" alt="Blog">
+                        <img src="media/blog/<%# Eval("ThumbnailURL") ==DBNull.Value?"blog_2.jpg":Eval("ThumbnailURL") %>" style="height:300px;width:1170px" alt="Blog">
                     </div>
                     <div class="blog-content-wrap">
                         <div class="blog-entry-header">
-                            <div class="entry-category">
-                                <a href="#">Community</a>
-                                <a href="#">Inspiration</a>
-                            </div>
-                            <h2 class="entry-title">Spoke with the developer sety make atype specimen book has survived not only five centuries</h2>
+                             <div class="entry-category">
+                                    <% foreach (var tagitem in tags)  {
+                                            string tagname =  tagitem.ToString();                                           
+                                            %>
+                                    <a href="#" style="color:brown;background-color:#f7d35c"><%:  tagname %></a>
+                                    <% } %>                                   
+                                </div>
+                          
+                            <h2 class="entry-title"><%# Eval("PostTitle") %></h2>
                             <div class="row align-items-center">
                                 <div class="col-lg-8">
                                     <ul class="entry-meta">
                                         <li>
-                                            <img src="media/figure/chat_7.jpg" alt="Chat">
-                                            By <a href="#">Fahim Rahman</a>
+                                            <img src="media/userimages/<%# Eval("PictureURL") == DBNull.Value?"flat-user-icon-11.png":Eval("PictureURL") %>" style="height:44px;width:44px" alt="Chat">
+
+                                            By <a href="#"><%# Eval("authorname") %></a>
                                         </li>
-                                        <li><i class="icofont-calendar"></i> 15 October, 2020</li>
-                                        <li><i class="icofont-comment"></i> Comments: 05</li>
-                                        <li><i class="icofont-share"></i> Share: 02</li>
+                                        <li><i class="icofont-calendar" style="color:brown"></i><%# Convert.ToDateTime(Eval("PostDate")).ToString("dd MMMM, yyyy")%> </li>
+                                        <li><i class="icofont-comment" style="color:brown"></i> Comments: <%# Eval("NoOfComment") %></li>
+                                        <li><a href="edit_blog?bid=<%# Eval("BlogId") %>">Edit BlogPost<i class="icofont-edit" style="color:brown"></i></a></li>
                                     </ul>
                                 </div>
                                 <div class="col-lg-4">
@@ -43,35 +54,17 @@
                             </div>
                         </div>
                         <div class="blog-content">
-                            <p>Seohen an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets strickcontainingwhen an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting. </p>
-                            <blockquote>
-                                <p>Blog estibulum diam metus, varius quis eleifend eget, tincidunt sit amet ante. Etiam quisaccu msan vamus efeliselconvallis, ultrices commodo nisety ncidunt odio, ut varius mi justo. Blog estibulum diam metuultrices commodo erisque et orci convallis, ultrices commodo nisety ncidunt odio, ut varius mi ex quis justo. </p>
-                            </blockquote>
-                            <p>Seohen an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets strickcontainingwhen an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting. </p>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="content-img">
-                                        <img src="media/blog/blog_11.jpg" alt="Blog">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="content-img">
-                                        <img src="media/blog/blog_12.jpg" alt="Blog">
-                                    </div>
-                                </div>
-                            </div>
-                            <h3 class="item-title">What’s In Your Mind?</h3>
-                            <p>Seohen an unknown printer tok a galley of type and scrambled it to maketypspecimen book. It has survived not only five centuries, but also the leapremaining essentially unchanged.ook.Seohen an unknown printer tok a galley of type and scrambled it to maketypspecimen bs survive but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset shee Ipsum passages, and more recently with desktop publishing.</p>
+                            <p><%# Eval("PostContent") %></p>
                         </div>
                         <div class="blog-footer">
-                            <div class="item-label">Choose your <span>Reaction!</span></div>
+                            <div class="item-label">Choose your <span>Reaction</span></div>
                             <div class="reaction-icon">
-                                <a href="#"><img src="media/figure/reaction_1.png" alt="Like"></a>
-                                <a href="#"><img src="media/figure/reaction_6.png" alt="Like"></a>
-                                <a href="#"><img src="media/figure/reaction_2.png" alt="Like"></a>
-                                <a href="#"><img src="media/figure/reaction_7.png" alt="Like"></a>
-                                <a href="#"><img src="media/figure/reaction_3.png" alt="Like"></a>
-                                <a href="#"><img src="media/figure/reaction_5.png" alt="Like"></a>
+                                <asp:LinkButton ID="LinkButton2" runat="server" OnClick="like"><img src="media/figure/reaction_1.png" alt="Like"></asp:LinkButton>
+                                <asp:LinkButton ID="LinkButton3" runat="server" OnClick="cry"><img src="media/figure/reaction_6.png" alt="Like"></asp:LinkButton>
+                                <asp:LinkButton ID="LinkButton4" runat="server" OnClick="laugh"><img src="media/figure/reaction_2.png" alt="Like"></asp:LinkButton>
+                                <asp:LinkButton ID="LinkButton5" runat="server" OnClick="surprise"><img src="media/figure/reaction_7.png" alt="Like"></asp:LinkButton>
+                                <asp:LinkButton ID="LinkButton6" runat="server" OnClick="love"><img src="media/figure/reaction_3.png" alt="Like"></asp:LinkButton>
+                                <asp:LinkButton ID="LinkButton7" runat="server" OnClick="angry"><img src="media/figure/reaction_5.png" alt="Like"></asp:LinkButton>
                             </div>
                         </div>
                         <div class="blog-comment-form">
@@ -79,59 +72,71 @@
                             <div>
                                 <div class="row gutters-20">
                                     <div class="col-lg-4 form-group">
-                                        <input type="text" name="name" class="form-control" placeholder="Name">
-                                    </div>
-                                    <div class="col-lg-4 form-group">
-                                        <input type="email" name="email" class="form-control" placeholder="E-mail">
-                                    </div>
-                                    <div class="col-lg-4 form-group">
-                                        <input type="text" name="website" class="form-control" placeholder="website">
+                                        <asp:TextBox ID="nametxt" type="nametxt" class="form-control" placeholder="Fulla Name" runat="server"></asp:TextBox>
+                                    </div>                                                                     
+                                    <div class="col-lg-12 form-group">
+                                         <asp:TextBox id="messagetxt" runat="server" class="form-control textarea" placeholder="Comment" cols="30" rows="7" TextMode="MultiLine"></asp:TextBox>
                                     </div>
                                     <div class="col-lg-12 form-group">
-                                        <textarea name="message" id="message" class="form-control textarea" placeholder="Comments" cols="30" rows="7"></textarea>
+                                        <asp:LinkButton ID="LinkButton1" runat="server"  type="submit" class="submit-btn" OnClick="PostComment">Post Comment</asp:LinkButton>
                                     </div>
-                                    <div class="col-lg-12 form-group">
-                                        <input type="submit" class="submit-btn" name="post-comment" value="Post Comment">
-                                    </div>
+
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+             </ItemTemplate>
+                    </asp:Repeater>
+                  <!-- ALERT -->
+                              <div class="alert alert-danger" role="alert" id="exceptiondiv" runat="server" visible="false">
+                                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button><span id="exceptiontxt" runat="server"></span>
+                                </div>
                 <div class="realated-blog">
                     <div class="block-box blog-heading">
                         <h3 class="heading-title">Other Blog Posts</h3>
                     </div>
                     <div class="row">
-                        <div class="col-lg-4">
-                            <div class="block-box user-blog">
-                                <div class="blog-img">
-                                    <a href="#"><img src="media/blog/blog_4.jpg" alt="Blog"></a>
-                                </div>
-                                <div class="blog-content">
-                                    <div class="blog-category">
-                                        <a href="#">Community</a>
-                                        <a href="#">Inspiration</a>
+                    
+                          <asp:Repeater ID="Repeater2" runat="server" OnItemCreated="Repeater2_ItemCreated">
+                        <ItemTemplate>
+                            <div class="col-lg-4 col-md-6">
+                                <asp:Label ID="entrytxt" Visible="false" runat="server" Text='<%# Eval("BlogId") %>' />
+                                <div class="block-box user-blog">
+                                    <div class="blog-img">
+                                        <a href="#">
+                                            <img src="media/blog/<%# Eval("ThumbnailURL") ==DBNull.Value?"blog_2.jpg":Eval("ThumbnailURL") %>" style="height: 200px; width: 376px" alt="Blog"></a>
                                     </div>
-                                    <h3 class="blog-title"><a href="#">Spoke with the developer sety 2020 Gaming Area</a></h3>
-                                    <div class="blog-date"><i class="icofont-calendar"></i> 15 October, 2020</div>
-                                    <p>when ann unknown printer took galley type and scrambled it to make aretype specimen book has survived not only.</p>
-                                </div>
-                                <div class="blog-meta">
-                                    <ul>
-                                        <li class="blog-reaction">
-                                            <div class="reaction-icon">
-                                                <img src="media/figure/reaction_1.png" alt="icon">
-                                                <img src="media/figure/reaction_2.png" alt="icon">
-                                                <img src="media/figure/reaction_3.png" alt="icon">
-                                            </div>
-                                            <div class="meta-text">+ 15 others</div>
-                                        </li>
-                                        <li><i class="icofont-comment"></i> 05</li>
-                                    </ul>
+                                    <div class="blog-content">
+                                        <div class="blog-category">
+                                            <% foreach (var tagitem in tags)
+                                                {
+                                                    string tagname = tagitem.ToLower().ToString();
+                                            %>
+                                            <a href="#" style="color: brown; background-color: #f7d35c"><%:  tagname %></a>
+                                            <% } %>
+                                        </div>
+                                        <h3 class="blog-title"><a href="blog_details?bid=<%# Eval("BlogId") %>" style="color: brown"><%# Eval("PostTitle") %></a></h3>
+                                        <div class="blog-date"><i class="icofont-calendar" style="color: brown"></i><%# Convert.ToDateTime(Eval("PostDate")).ToString("dd MMMM, yyyy") %></div>
+                                        <p><%# Eval("PostContent") %></p>
+                                    </div>
+                                    <div class="blog-meta">
+                                        <ul>
+                                            <%-- <li class="blog-reaction">
+                                        <div class="reaction-icon">
+                                            <img src="media/figure/reaction_1.png" alt="icon">
+                                            <img src="media/figure/reaction_2.png" alt="icon">
+                                            <img src="media/figure/reaction_3.png" alt="icon">
+                                        </div>
+                                        <div class="meta-text">+ 15 others</div>
+                                    </li>--%>
+                                            <li><i class="icofont-comment"></i><%# Eval("NoOfComment") %></li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </ItemTemplate>
+                    </asp:Repeater>
                       
                       
                     </div>

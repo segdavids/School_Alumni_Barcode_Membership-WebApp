@@ -103,7 +103,7 @@
         <!--=====================================-->
         <!--=         Team Area  Start       	=-->
         <!--=====================================-->
-        <section class="section team-circle">
+  <section class="section team-circle">
             <div class="container position-relative">
                 <div class="section-heading">
                     <h2 class="item-title" style="color:brown">Active Members</h2>
@@ -114,107 +114,121 @@
                         <div class="row no-gutters">
                             <div class="col-lg-4 col-sm-6">
                                 <ul class="nav nav-tabs nav-tabs-left" role="tablist">
+                                  
+                                   
+                                     <li class="nav-item active">
+                                        <a class="nav-link" data-toggle="tab" href="#team<%:all6.Count>1? all6[0].Team:1%>" role="tab" aria-selected="false">
+                                            <img style="height:270px;width:270px" src="media/userimages/<%:all6.Count>1?  all6[0].PictureURL == ""?"flat-user-icon-11.png":all6[0].PictureURL:"flat-user-icon-11.png" %>" alt="<%:all6.Count>1? all6[0].Fullname:"Member" %>">
+                                        </a>
+                                    </li>                                 
                                     <li class="nav-item">
-                                        <a class="nav-link active" data-toggle="tab" href="#team1" role="tab" aria-selected="true">
-                                            <img src="media/team/team_1.jpg" alt="team">
+                                        <a class="nav-link" data-toggle="tab" href="#team<%: all6.Count>2?  all6[1].Team:2 %>" role="tab" aria-selected="false">
+                                            <img style="height:235px;width:235px" src="media/userimages/<%:all6.Count>2?  all6[1].PictureURL == ""?"flat-user-icon-11.png":all6[1].PictureURL:"flat-user-icon-11.png" %>" alt="<%:all6.Count>2? all6[1].Fullname:"Member" %>">
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" data-toggle="tab" href="#team2" role="tab" aria-selected="false">
-                                            <img src="media/team/team_5.jpg" alt="team">
+                                        <a class="nav-link" data-toggle="tab" href="#team<%:all6.Count>3? all6[2].Team:3%>" role="tab" aria-selected="false">
+                                            <img style="height:235px;width:235px" src="media/userimages/<%: all6.Count>3?  all6[2].PictureURL == ""?"flat-user-icon-11.png":all6[2].PictureURL:"flat-user-icon-11.png" %>" alt="<%:all6.Count>3? all6[2].Fullname:"Member" %>">
                                         </a>
                                     </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" data-toggle="tab" href="#team3" role="tab" aria-selected="false">
-                                            <img src="media/team/team_6.jpg" alt="team">
-                                        </a>
-                                    </li>
-                                </ul>
+                            </ul>
                             </div>
                             <div class="col-lg-4 col-sm-6 order-lg-3">
                                 <ul class="nav nav-tabs nav-tabs-right" role="tablist">
                                     <li class="nav-item">
-                                        <a class="nav-link" data-toggle="tab" href="#team4" role="tab" aria-selected="false">
-                                            <img src="media/team/team_3.jpg" alt="team">
+                                        <a class="nav-link" data-toggle="tab" href="#team<%:all6.Count>4? all6[3].Team:4%>" role="tab" aria-selected="false">
+                                            <img style="height:235px;width:235px" src="media/userimages/<%: all6.Count>4?  all6[3].PictureURL == ""?"flat-user-icon-11.png":all6[3].PictureURL:"flat-user-icon-11.png" %>" alt="<%:all6.Count>4? all6[3].Fullname:"Member" %>">
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" data-toggle="tab" href="#team5" role="tab" aria-selected="false">
-                                            <img src="media/team/team_4.jpg" alt="team">
+                                        <a class="nav-link" data-toggle="tab" href="#team<%:all6.Count>5? all6[4].Team:5%>" role="tab" aria-selected="false">
+                                            <img style="height:235px;width:235px" src="media/userimages/<%: all6.Count>5?  all6[4].PictureURL == ""?"flat-user-icon-11.png":all6[4].PictureURL:"flat-user-icon-11.png" %>" alt="<%:all6.Count>5? all6[4].Fullname:"Member" %>">
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" data-toggle="tab" href="#team6" role="tab" aria-selected="false">
-                                            <img src="media/team/team_7.jpg" alt="team">
+                                        <a class="nav-link" data-toggle="tab" href="#team<%:all6.Count>6? all6[5].Team:6%>" role="tab" aria-selected="false">
+                                            <img  style="height:270px;width:270px" src="media/userimages/<%:all6.Count>6? all6[5].PictureURL == ""?"flat-user-icon-11.png":all6[5].PictureURL:"flat-user-icon-11.png" %>" alt="<%:all6.Count>6? all6[5].Fullname:"Member" %>">
                                         </a>
                                     </li>
                                 </ul>
                             </div>
                             <div class="col-lg-4 order-lg-2">
                                 <div class="tab-content">
-                                    <div class="tab-pane fade show active" id="team1" role="tabpanel">
+                                    <div class="tab-pane fade show active" id="team<%:all6.Count>1? all6[0].Team:1%>" role="tabpanel">
                                         <div class="team-box">
                                             <div class="item-img">
-                                                <img src="media/team/team_1.jpg" alt="team">
+                                            <img style="height:296.5px;width:296.5px" src="media/userimages/<%:all6.Count>1?  all6[0].PictureURL == ""?"flat-user-icon-11.png":all6[0].PictureURL:"flat-user-icon-11.png" %>" alt="<%:all6.Count>1? all6[0].Fullname:"Member" %>">
                                             </div>
                                             <div class="item-content">
-                                                <h3 class="item-title"><a href="user-timeline.html">Ketty Rio</a></h3>
-                                                <div class="group-count"><span>25</span> - Fashion</div>
+                                                <h3 class="item-title"><a href="member_details?mid=<%:all6.Count>1? all6[0].UserId:0%>"><%:all6.Count>1? all6[0].Fullname:""%></a></h3>
+                                                <div class="group-count">
+                                                    <span><a href="https://www.facebook.com/<%:all6.Count>1? all6[0].Facebook:""%>" style="color:brown"><i class="icofont-facebook"></i></a></span>  <span><a href="https://www.twitter.com/<%:all6.Count>1? all6[0].Twitter:""%>" style="color:brown"><i class="icofont-twitter"></i></a></span> <span><a href="https://www.instagram.com/<%:all6.Count>1? all6[0].Instagram:""%>" style="color:brown"><i class="icofont-instagram"></i></a></span> 
+                                                </div>
+                                            </div>	
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="team<%:all6.Count>2? all6[1].Team:2%>" role="tabpanel">
+                                        <div class="team-box">
+                                            <div class="item-img">
+                                                <img style="height:296.5px;width:296.5px" src="media/userimages/<%:all6.Count>2?  all6[1].PictureURL == ""?"flat-user-icon-11.png":all6[1].PictureURL:"flat-user-icon-11.png" %>" alt="<%:all6.Count>2? all6[1].Fullname:"Member" %>">
+                                            </div>
+                                             <div class="item-content">
+                                                <h3 class="item-title"><a href="member_details?mid=<%:all6.Count>2? all6[1].UserId:0%>"><%:all6.Count>2? all6[1].Fullname:""%></a></h3>
+                                                <div class="group-count">
+                                                    <span><a href="https://www.facebook.com/<%:all6.Count>2? all6[1].Facebook:""%>" style="color:brown"><i class="icofont-facebook"></i></a></span>  <span><a href="https://www.twitter.com/<%:all6.Count>2? all6[1].Twitter:""%>" style="color:brown"><i class="icofont-twitter"></i></a></span> <span><a href="https://www.instagram.com/<%:all6.Count>2? all6[1].Instagram:""%>" style="color:brown"><i class="icofont-instagram"></i></a></span> 
+                                                </div>
+                                            </div>	
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="team<%:all6.Count>3? all6[2].Team:3%>" role="tabpanel">
+                                        <div class="team-box">
+                                            <div class="item-img">
+                                                <img style="height:296.5px;width:296.5px" src="media/userimages/<%:all6.Count>3?  all6[2].PictureURL == ""?"flat-user-icon-11.png":all6[2].PictureURL:"flat-user-icon-11.png" %>" alt="<%:all6.Count>3? all6[2].Fullname:"Member" %>">
+                                            </div>
+                                            <div class="item-content">
+                                                <h3 class="item-title"><a href="member_details?mid=<%:all6.Count>3? all6[2].UserId:0%>"><%:all6.Count>3? all6[2].Fullname:""%></a></h3>
+                                                <div class="group-count">
+                                                    <span><a href="https://www.facebook.com/<%:all6.Count>3? all6[2].Facebook:""%>" style="color:brown"><i class="icofont-facebook"></i></a></span>  <span><a href="https://www.twitter.com/<%:all6.Count>3? all6[2].Twitter:""%>" style="color:brown"><i class="icofont-twitter"></i></a></span> <span><a href="https://www.instagram.com/<%:all6.Count>3? all6[2].Instagram:""%>" style="color:brown"><i class="icofont-instagram"></i></a></span> 
+                                                </div>
+                                            </div>	
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="team<%:all6.Count>4? all6[3].Team:4%>" role="tabpanel">
+                                        <div class="team-box">
+                                            <div class="item-img">
+                                                <img style="height:296.5px;width:296.5px" src="media/userimages/<%:all6.Count>4?  all6[3].PictureURL == ""?"flat-user-icon-11.png":all6[3].PictureURL:"flat-user-icon-11.png" %>" alt="<%:all6.Count>4? all6[3].Fullname:"Member" %>">
+                                            </div>
+                                             <div class="item-content">
+                                                <h3 class="item-title"><a href="member_details?mid=<%:all6.Count>4? all6[3].UserId:0%>"><%:all6.Count>4? all6[3].Fullname:""%></a></h3>
+                                                <div class="group-count">
+                                                    <span><a href="https://www.facebook.com/<%:all6.Count>4? all6[3].Facebook:""%>" style="color:brown"><i class="icofont-facebook"></i></a></span>  <span><a href="https://www.twitter.com/<%:all6.Count>4? all6[3].Twitter:""%>" style="color:brown"><i class="icofont-twitter"></i></a></span> <span><a href="https://www.instagram.com/<%:all6.Count>4? all6[3].Instagram:""%>" style="color:brown"><i class="icofont-instagram"></i></a></span> 
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="tab-pane fade" id="team2" role="tabpanel">
+                                    <div class="tab-pane fade" id="team<%:all6.Count>5? all6[4].Team:5%>" role="tabpanel">
                                         <div class="team-box">
-                                            <div class="item-img">
-                                                <img src="media/team/team_5.jpg" alt="team">
+                                            <div class="item-img" >
+                                                <img style="height:296.5px;width:296.5px;background-color:lightgray" src="media/userimages/<%:all6.Count>5?  all6[4].PictureURL == ""?"flat-user-icon-11.png":all6[4].PictureURL:"flat-user-icon-11.png" %>" alt="<%:all6.Count>5? all6[4].Fullname:"Member" %>">
                                             </div>
                                             <div class="item-content">
-                                                <h3 class="item-title"><a href="user-timeline.html">Johnson John</a></h3>
-                                                <div class="group-count"><span>25</span> - Fashion</div>
+                                                <h3 class="item-title"><a href="member_details?mid=<%:all6.Count>5? all6[4].UserId:0%>"><%:all6.Count>5? all6[4].Fullname:""%></a></h3>
+                                                <div class="group-count">
+                                                    <span><a href="https://www.facebook.com/<%:all6.Count>5? all6[4].Facebook:""%>" style="color:brown"><i class="icofont-facebook"></i></a></span>  <span><a href="https://www.twitter.com/<%:all6.Count>5? all6[4].Twitter:""%>" style="color:brown"><i class="icofont-twitter"></i></a></span> <span><a href="https://www.instagram.com/<%:all6.Count>5? all6[4].Instagram:""%>" style="color:brown"><i class="icofont-instagram"></i></a></span> 
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="tab-pane fade" id="team3" role="tabpanel">
+                                    <div class="tab-pane fade" id="team<%:all6.Count>6? all6[5].Team:6%>" role="tabpanel">
                                         <div class="team-box">
                                             <div class="item-img">
-                                                <img src="media/team/team_6.jpg" alt="team">
+                                                <img style="height:296.5px;width:296.5px" src="media/userimages/<%:all6.Count>6?  all6[5].PictureURL == ""?"flat-user-icon-11.png":all6[5].PictureURL:"flat-user-icon-11.png" %>" alt="<%:all6.Count>6? all6[5].Fullname:"Member" %>">
                                             </div>
-                                            <div class="item-content">
-                                                <h3 class="item-title"><a href="user-timeline.html">Fahim Rahman</a></h3>
-                                                <div class="group-count"><span>25</span> - Fashion</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane fade" id="team4" role="tabpanel">
-                                        <div class="team-box">
-                                            <div class="item-img">
-                                                <img src="media/team/team_3.jpg" alt="team">
-                                            </div>
-                                            <div class="item-content">
-                                                <h3 class="item-title"><a href="user-timeline.html">Mamunur Rashid</a></h3>
-                                                <div class="group-count"><span>25</span> - Fashion</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane fade" id="team5" role="tabpanel">
-                                        <div class="team-box">
-                                            <div class="item-img">
-                                                <img src="media/team/team_4.jpg" alt="team">
-                                            </div>
-                                            <div class="item-content">
-                                                <h3 class="item-title"><a href="user-timeline.html">Ketty Rio</a></h3>
-                                                <div class="group-count"><span>25</span> - Fashion</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane fade" id="team6" role="tabpanel">
-                                        <div class="team-box">
-                                            <div class="item-img">
-                                                <img src="media/team/team_7.jpg" alt="team">
-                                            </div>
-                                            <div class="item-content">
-                                                <h3 class="item-title"><a href="user-timeline.html">Ketty Rio</a></h3>
-                                                <div class="group-count"><span>25</span> - Fashion</div>
+                                             <div class="item-content">
+                                                <h3 class="item-title"><a href="member_details?mid=<%:all6.Count>6? all6[5].UserId:0%>"><%:all6.Count>6? all6[5].Fullname:""%></a></h3>
+                                                <div class="group-count">
+                                                    <span><a href="https://www.facebook.com/<%:all6.Count>6? all6[5].Facebook:""%>" style="color:brown"><i class="icofont-facebook"></i></a></span>  <span><a href="https://www.twitter.com/<%:all6.Count>6? all6[5].Twitter:""%>" style="color:brown"><i class="icofont-twitter"></i></a></span> <span><a href="https://www.instagram.com/<%:all6.Count>6? all6[5].Instagram:""%>" style="color:brown"><i class="icofont-instagram"></i></a></span> 
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -223,12 +237,7 @@
                         </div>
                         <ul class="shape-wrap">
                             <li><img src="media/figure/shape_9.png" alt="shape"></li>
-                            <li><img src="media/team/shape_1.png" alt="shape"></li>
-                            <li><img src="media/team/shape_2.png" alt="shape"></li>
                             <li><img src="media/team/shape_circle_1.png" alt="shape"></li>
-                            <li><img src="media/team/shape_circle_2.png" alt="shape"></li>
-                            <li><img src="media/team/shape_circle_3.png" alt="shape"></li>
-                            <li><img src="media/team/shape_3.png" alt="shape"></li>
                             <li><img src="media/team/shape_4.png" alt="shape"></li>
                         </ul>
                     </div>

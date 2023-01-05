@@ -77,6 +77,11 @@
                                             <label class="form-check-label" for="validationFormCheck2">Keep me as signed in</label>
                                         </div>
                                     </div>
+                                     <!-- ALERT -->
+                <div class="alert alert-danger" role="alert" id="exceptiondiv" runat="server" visible="false">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button>
+                    <span id="exceptiontxt" runat="server"></span>
+                </div>
                                     <div class="form-group">
                                         <asp:Button ID="Button1" type="submit" name="login-btn" class="submit-btn" OnClick="Button1_Click" runat="server" style="color:#f7d35c" Text="Login" />
                                     </div>
@@ -89,10 +94,10 @@
                                 <h3 class="item-title">Sign Up Your Account</h3>
                                 <div>
                                     <div class="form-group">
-                                        <input type="text" name="fname" class="form-control" placeholder="First Name">
+                                        <input type="text" id="fname" class="form-control" placeholder="First Name">
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" name="lname" class="form-control" placeholder="Last Name">
+                                        <input type="text" id="lname" class="form-control" placeholder="Last Name">
                                     </div>
                                     <div class="form-group">
                                         <input type="email" name="email" class="form-control" placeholder="E-mail">

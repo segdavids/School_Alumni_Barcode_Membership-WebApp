@@ -60,7 +60,7 @@
      </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <asp:Repeater ID="Repeater1" runat="server" OnItemCreated="Repeater1_ItemCreated">
+    <asp:Repeater ID="Repeater1" runat="server">
          <ItemTemplate>
      <!-- Page Content -->
         <div class="page-content">
@@ -78,13 +78,13 @@
                             </div>
                             <div class="media-body">
                                 <h3 class="item-title"><%# Eval("FirstName") %> <%# Eval("LastName") %></h3>
-                                <div class="item-subtitle">Nigeria, South-East</div>
+                                <div class="item-subtitle">Admin Account</div>
                                 <ul class="item-social">
                                      <li><a href="<%# Eval("FirstName") %> " class="bg-fb"><i class="icofont-facebook"></i></a></li>
                                     <li><a href="#" class="bg-twitter"><i class="icofont-twitter"></i></a></li>
                                     <li><a href="#" class="bg-instagram"><i class="icofont-instagram"></i></a></li>
                                     <li><a href="#" class="bg-success"><i class="icofont-whatsapp"></i></a></li>
-                                    <li><a href="/admin/edit_member?mid=<%# Eval("MemberId") %>" title="Edit" class="bg-warning"><i class="icofont-edit"></i></a></li>
+                                    <li><a href="/admin/settings" title="Edit" class="bg-warning"><i class="icofont-edit"></i></a></li>
 
                                 </ul>
                                  
@@ -95,7 +95,6 @@
                 <div class="block-box user-top-header">
                     <ul class="menu-list">
                         <li class="active"><a href="#">Profile</a></li>
-                        <li><a href="/admin/account/edit_profile?aid=">About</a></li>
                          <li><a href="/admin/members">Members</a></li>
                         <li><a href="/admin/all_groups">Groups</a></li>
                         <li><a href="/admin/gallery">Gallery</a></li>
@@ -115,31 +114,31 @@
                             <ul class="user-info">
                                 <li>
                                     <label>Bio:</label>
-                                    <p><%# Eval("About") %></p>
+                                    <p>N/A</p>
                                 </li>
                                 <li>
                                     <label>Next of Kin:</label>
-                                    <p><%# Eval("NextOfKin") %></p>
+                                    <p>N/A</p>
                                 </li>
                                 <li>
                                     <label>Next of Kin Phone:</label>
-                                    <p><%# Eval("NOKPhone") %></p>
+                                    <p>N/A</p>
                                 </li>
                                  <li>
                                     <label>Member Ranking:</label>
-                                    <p><%# Eval("RankName") %></p>
+                                    <p>N/A</p>
                                 </li>                                                
                                 <li>
                                     <label>Favourite Books:</label>
-                                    <p><%# Eval("Books") %>.</p>
+                                    <p>N/A.</p>
                                 </li>
                                 <li>
                                     <label>Favourite Movies:</label>
-                                    <p><%# Eval("Movies") %>.</p>
+                                    <p>N/A.</p>
                                 </li>
                                 <li>
                                     <label>Leisure Activities/Hobbies:</label>
-                                    <p><%# Eval("Hobby") %>.</p>
+                                    <p>N/A.</p>
                                 </li>
                             </ul>
                         </div>
@@ -155,7 +154,7 @@
                                 </li>
                                 <li>
                                     <label>Specialization:</label>
-                                    <p><%# Eval("SpecializationName") %></p>
+                                    <p>N/A</p>
                                 </li>                            
                             </ul>
                         </div>
@@ -167,31 +166,31 @@
                             <ul class="user-info">
                                 <li>
                                     <label>E-mail:</label>
-                                    <p><%# Eval("Email") %></p>
+                                    <p>N/A</p>
                                 </li>
                                 <li>
                                     <label>Phone:</label>
-                                    <p><%# Eval("Phone") %></p>
+                                    <p><%# Eval("MobileNo") %></p>
                                 </li>
                                 <li>
                                     <label>Address:</label>
-                                    <p><%# Eval("StateName") %>, <%# Eval("LocationName") %></p>
+                                    <p>N/A</p>
                                 </li>
                                 <li>
                                     <label>Website:</label>
-                                    <p><a href="<%# ConfigurationManager.AppSettings["domainurl"]+"view/profile?mid="+ Eval("MemberUniqueId") %>" ><%# ConfigurationManager.AppSettings["domainurl"]+"view/profile?mid="+ Eval("MemberUniqueId") %></a></p>
+                                    <p><a href="#"></a></p>
                                 </li>
                                  <li>
                                     <label>Facebook:</label>
-                                    <p><a href="https://www.facebook.com/<%# Eval("Facebook") %>" style="color:dimgray"><%# Eval("Facebook") %></a></p>
+                                    <p><a href="https://www.facebook.com/" style="color:dimgray">N/A</a></p>
                                 </li>
                                  <li>
                                     <label>Twitter:</label>
-                                    <p><a href="https://www.twitter.com/<%# Eval("Twitter") %>" style="color:dimgray"><%# Eval("Twitter") %></a></p>
+                                    <p><a href="https://www.twitter.com/" style="color:dimgray">N/A</a></p>
                                 </li>
                                  <li>
                                     <label>Instagram:</label>
-                                    <p><a href="https://www.instagram.com/<%# Eval("Instagram") %>" style="color:dimgray"><%# Eval("Instagram") %></a></p>
+                                    <p><a href="https://www.instagram.com/" style="color:dimgray">N/A</a></p>
                                 </li>
                             </ul>
                         </div>
@@ -205,14 +204,14 @@
                                
                             </div>
                             <div class="user-info">
-                                <p>Hi! My name is Rebeca Powel but some people may know me asserty GamePagla! I have a Newbike channel where I stream.</p>
+                                <p>Admin Account.</p>
                                 <ul class="info-list">
-                                    <li><span>Joined:</span>24/12/2020</li>
-                                    <li><span>E-mail:</span>info@gmail.com</li>
-                                    <li><span>Address:</span>59 Street Neworkcity</li>
-                                    <li><span>Phone:</span>+123 9856836</li>
-                                    <li><span>Country:</span>USA</li>
-                                    <li><span>Web:</span><a href="#">www.rebeca.com</a></li>
+                                    <li><span>Joined:</span><%# Convert.ToDateTime(Eval("DateCreated")).ToString("dd/MM/yyyy") %></li>
+                                    <li><span>E-mail:</span><%# Eval("Email") %></li>
+                                    <li><span>Address:</span>-</li>
+                                    <li><span>Phone:</span><%# Eval("MobileNo") %></li>
+                                    <li><span>Country:</span>NG</li>
+                                    <li><span>Web:</span><a href="#">doba.org</a></li>
                                     <li class="social-share"><span>Social:</span>
                                         <div class="social-icon">
                                             <a href="#"><i class="icofont-facebook"></i></a>
@@ -235,7 +234,7 @@
                                     </div>
                                     <div class="media-body">
                                         <h3 class="item-title"><a href="#" style="color:white;font-size:18px"><%# Eval("FirstName") %> <%# Eval("LastName") %></a></h3>
-                                        <h4 class="item-title"><a href="#" style="color:white;font-weight:400">Member</a></h4>
+                                        <h4 class="item-title"><a href="#" style="color:white;font-weight:400">Admin</a></h4>
                                          <a href="#"><i class="icofont-email" style="color:#f7d35c"></i></a>
                                          <a href="#"><i class="icofont-facebook" style="color:#f7d35c"></i></a>
                                          <a href="#"><i class="icofont-twitter" style="color:#f7d35c"></i></a>

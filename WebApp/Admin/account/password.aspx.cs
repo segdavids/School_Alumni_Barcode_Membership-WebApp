@@ -32,7 +32,7 @@ namespace WebApp.Admin.account
                 }
                 else
                 {
-                    string returnvalue = BLL.ChangePassword(newpw, oldpw, Session["AdminId"].ToString());
+                    string returnvalue = BLL.ChangePassword(newpw, oldpw, Session["UserId"].ToString());
                     switch (returnvalue)
                     {
                         case "200":

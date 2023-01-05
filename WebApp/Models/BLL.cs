@@ -145,6 +145,59 @@ namespace WebApp.Models
             return returnvalue;
         }
 
+        public static string ChangePasswordMmber(string newpassword, string passkey, string emailid)
+        {
+            string returnvalue = string.Empty;
+            try
+            {
+                SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["BarcodeAppDB"].ConnectionString);
+                //string encryptedpk = encryptpass(passkey);
+                //string newencryptedpk = encryptpass(newpassword);
+                DateTime timeofreg = DateTime.Now;
+
+                //CHECK TO CONFIRM THAT USER DOES NOT ALREADY EXIST
+                conn.Open();
+
+                SqlCommand authcheck = new SqlCommand("select * from Users where MemberId=@adminId and Password=@password", conn);
+                SqlDataReader rd;
+                authcheck.Parameters.AddWithValue("@adminId", emailid);
+                authcheck.Parameters.AddWithValue("@password", passkey);
+                rd = authcheck.ExecuteReader();
+                int count = 0;
+                while (rd.Read())
+                {
+                    count += 1;
+                }
+                rd.Close();
+                if (count == 0)
+                {
+                    returnvalue = "404";
+                    //return returnvalue;
+                }
+                else if (count == 1)
+                {
+                    rd = authcheck.ExecuteReader();
+                    while (rd.Read())
+                    {
+                        DateTime date = DateTime.Now; // 
+                        SqlCommand updtrec = new SqlCommand("Update Users set Password=@newpasskey WHERE MemberId=@adminId", conn);
+                        updtrec.Parameters.AddWithValue("@newpasskey", newpassword);
+                        updtrec.Parameters.AddWithValue("@datetimenow", date);
+                        updtrec.Parameters.AddWithValue("@adminId", emailid);
+                        updtrec.ExecuteNonQuery();
+                        string activityType = "Password Changed";
+                        returnvalue = "200";
+                    }
+
+                }
+            }
+            catch (Exception exception)
+            {
+                returnvalue = "Failed!" + exception.ToString() + "";
+                //return returnvalue; 
+            }
+            return returnvalue;
+        }
         public class FileUpload1
         {
 
